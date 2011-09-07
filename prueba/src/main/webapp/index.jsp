@@ -1,6 +1,5 @@
 <html>
 <body>
-<h2>Hello Cyanogen!!!</h2>
-<h2>erihhhh!</h2>
+<h2>Curso de Desarrollo de sistemas Distribuidos</h2>
 </body>
 </html>
