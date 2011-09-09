@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Distribuidos</h2>
+<h2>Consultas</h2>
 </body>
 </html>
