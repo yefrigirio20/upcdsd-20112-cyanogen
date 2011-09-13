@@ -1,9 +1,8 @@
 package com.venta.pasajes.model;
 
 public class Usuario {
-	
 	private String user;
-	private String Nombre;
+	private String nombre;
 	
 	public String getUser() {
 		return user;
@@ -12,11 +11,10 @@ public class Usuario {
 		this.user = user;
 	}
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 	
-
 }
