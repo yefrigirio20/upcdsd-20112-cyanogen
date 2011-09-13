@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.lshimokawa.ejemplos</groupId>
-	<artifactId>apachecxf-jaxws-transporte</artifactId>
+	<artifactId>apachecxf-jaxws-ventapasajes</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>apachecxf-jaxws-transporte</name>
+	<name>apachecxf-jaxws-ventapasajes</name>
 	<url>http://lshimokawa.net</url>
 
 	<build>
-		<finalName>apachecxf-jaxws-transporte</finalName>
+		<finalName>apachecxf-jaxws-ventapasajes</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
