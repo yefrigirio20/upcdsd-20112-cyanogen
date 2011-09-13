@@ -5,11 +5,11 @@
 	<artifactId>apachecxf-jaxws-helloworld</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>apachecxf-jaxws-helloworld</name>
+	<name>venta-pasajes</name>
 	<url>http://lshimokawa.net</url>
 
 	<build>
-		<finalName>apachecxf-jaxws-helloworld</finalName>
+		<finalName>ventas-pasajes</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
