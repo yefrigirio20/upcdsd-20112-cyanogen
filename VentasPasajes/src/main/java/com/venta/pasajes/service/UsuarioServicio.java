@@ -1,7 +1,12 @@
 package com.venta.pasajes.service;
 
-public interface UsuarioServicio {
 
+import javax.jws.WebService;
+
+@WebService(endpointInterface="com.venta.pasajes.service.UsuarioServicio")
+public interface UsuarioServicio {
+	
+	
 	public String findNameUser(String user);
 	
 }
