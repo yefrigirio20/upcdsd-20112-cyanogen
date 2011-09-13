@@ -1,14 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pe.edu.upc.dsd</groupId>
-  <artifactId>VentasPasajes</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>VentasPasajes</name>
-  <url>http://maven.apache.org</url>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.lshimokawa.ejemplos</groupId>
+	<artifactId>apachecxf-jaxws-transporte</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>apachecxf-jaxws-transporte</name>
+	<url>http://lshimokawa.net</url>
+
 	<build>
-		<finalName>Ventas Pasajes</finalName>
+		<finalName>apachecxf-jaxws-transporte</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
