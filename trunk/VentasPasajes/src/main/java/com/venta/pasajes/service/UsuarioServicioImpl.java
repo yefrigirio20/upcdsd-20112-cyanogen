@@ -1,44 +1,36 @@
 package com.venta.pasajes.service;
 
-import java.util.List;
-
 import javax.jws.WebService;
 
-import com.venta.pasajes.model.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.venta.pasajes.dao.UsuarioDao;
+import com.venta.pasajes.model.Usuario;
 
 @WebService(endpointInterface="com.venta.pasajes.service.UsuarioServicio")
 public class UsuarioServicioImpl implements UsuarioServicio {
 
+	@Autowired
+	private UsuarioDao usuarioDao;
+
 	@Override
-	public String findNameUser(String user) {
-		// TODO Auto-generated method stub
-		return null;
+	public void registrarUsuario(Usuario usuario) {
+		usuarioDao.registrarUsuario(usuario);
 	}
 
 	@Override
-	public int RegistrarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return 1;
+	public void eliminarUsuario(Usuario usuario) {
+		usuarioDao.eliminarUsuario(usuario);
 	}
 
 	@Override
-	public List<Usuario> ListarUsuario() {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario buscarUsuario(int idUsuario) {
+		return usuarioDao.buscarUsuario(idUsuario);
 	}
 
 	@Override
-	public boolean ModificarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return false;
+	public void actualizarUsuario(Usuario usuario) {
+		usuarioDao.actualizarUsuario(usuario);
+		
 	}
-/*
-	public String findNameUser(String user) {	
-		Usuario usu= new Usuario();
-		usu.setUser("DGOMEZ");
-		usu.setNombre("David");
-		return usu.getNombre();
-	}
-*/
 }

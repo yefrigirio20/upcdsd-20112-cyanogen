@@ -1,20 +1,15 @@
 package com.venta.pasajes.service;
 
-import java.util.List;
-
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import com.venta.pasajes.model.Usuario;
 
 @WebService
 public interface UsuarioServicio {
-	public String findNameUser(String user);
-	
-	public int RegistrarUsuario(Usuario usuario);
-	
-	public List<Usuario> ListarUsuario();
-	
-	public boolean ModificarUsuario(Usuario usuario);
-	
+	public void registrarUsuario(@WebParam(name = "usuario")Usuario usuario);
+	public void eliminarUsuario(@WebParam(name = "usuario")Usuario usuario);
+	public Usuario buscarUsuario(@WebParam(name = "idUsuario")int idUsuario);
+	public void actualizarUsuario(@WebParam(name = "usuario")Usuario usuario);
 	
 }
