@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>VIAJES</title>
-<link href="../../styles/estilos.css" rel="stylesheet" type="text/css" />
+<link href="estilos/estilos.css" rel="stylesheet" type="text/css" />
 </head>
 
 
@@ -18,9 +18,9 @@
                                   <option  value="0" selected="selected">--Seleccionar--</option>
                                   <option  value="1">LIMA</option>
                                   <option  value="2">AREQUIPA</option>
-								  <option  value="2">CUSCO</option>
-								  <option  value="2">TRUJILLO</option>
-								  <option  value="2">CHICLAYO</option>
+								  <option  value="3">CUSCO</option>
+								  <option  value="4">TRUJILLO</option>
+								  <option  value="5">CHICLAYO</option>
                                 </select>
            </tr>
            
@@ -31,9 +31,9 @@
                                   <option  value="0" selected="selected">--Seleccionar--</option>
                                   <option  value="1">LIMA</option>
                                   <option  value="2">AREQUIPA</option>
-								  <option  value="2">CUSCO</option>
-								  <option  value="2">TRUJILLO</option>
-								  <option  value="2">CHICLAYO</option>
+								  <option  value="3">CUSCO</option>
+								  <option  value="4">TRUJILLO</option>
+								  <option  value="5">CHICLAYO</option>
              </select>
            </tr>
            

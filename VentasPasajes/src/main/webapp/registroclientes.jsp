@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>REGISTRO DE CLIENTES</title>
-<link href="../../styles/estilos.css" rel="stylesheet" type="text/css" />
+<link href="estilos/estilos.css" rel="stylesheet" type="text/css" />
 </head>
 
 
@@ -33,7 +33,7 @@
                                   <option  value="0" selected="selected">--Seleccionar--</option>
                                   <option  value="1">DNI</option>
                                   <option  value="2">RUC</option>
-								  <option  value="2">CE</option>
+								  <option  value="3">CE</option>
                                 </select>
            </tr>
            
