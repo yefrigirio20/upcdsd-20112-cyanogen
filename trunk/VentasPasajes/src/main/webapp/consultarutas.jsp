@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Consulta de  Rutas</title>
-<link href="../../styles/estilos.css" rel="stylesheet" type="text/css" />
+<link href="estilos/estilos.css" rel="stylesheet" type="text/css" />
 </head>
 
 
