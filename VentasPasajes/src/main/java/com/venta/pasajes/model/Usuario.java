@@ -1,6 +1,8 @@
 package com.venta.pasajes.model;
 
 public class Usuario {
+	
+	
 	private String nomUsuario;
 	private String apepatUsuario;
 	private String apematUsuario;
