@@ -17,9 +17,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	}
 
 	@Override
-	public boolean RegistrarUsuario(Usuario usuario) {
+	public int RegistrarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		return false;
+		return 1;
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import com.venta.pasajes.model.Usuario;
 public interface UsuarioServicio {
 	public String findNameUser(String user);
 	
-	public boolean RegistrarUsuario(Usuario usuario);
+	public int RegistrarUsuario(Usuario usuario);
 	
 	public List<Usuario> ListarUsuario();
 	
