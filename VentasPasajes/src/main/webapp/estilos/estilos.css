@@ -1,0 +1,87 @@
+/* CSS Document */
+
+/*HOME*/
+.txthome {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	color:#111111;
+}
+
+.txthomeazul {
+	font-family:arial,sans-serif;
+	font-size:13px;
+	color:#004477;
+	font-weight:bold;
+}
+
+.txthomelink {
+	font-family: Arial,sans-serif;
+	font-size: 12px;
+	text-transform: lowercase;
+	color:#3389DB;
+	font-weight:bold;
+}
+
+/*MENÚ*/
+.txtmenu {
+	font-family: Arial,sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	color:#3389DB;
+	font-weight:bold;
+}
+
+/*TODO*/
+A:link {
+	COLOR: #3389DB;
+	TEXT-DECORATION: none;
+}
+A:visited {COLOR: #3389DB; TEXT-DECORATION: none}
+A:active {TEXT-DECORATION: none}
+A:hover {COLOR: gray; TEXT-DECORATION: underline}
+
+.txtruta {
+	font-family:arial,sans-serif;
+	font-size:11px;
+	color:#999999;
+	font-weight:bold;
+}
+
+.txttitulos {
+	font-family:arial,sans-serif;
+	font-size:19px;
+	color:#000000;
+}
+
+.txtsubtitulos {
+	font-family:arial,sans-serif;
+	font-size:16px;
+	color:#CC0000;
+	font-weight:bold;
+}
+
+.txtcontenido {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	color:#111111;
+}
+
+.txtcomentarios {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+}
+
+.txtayuda {
+	font-family:arial,sans-serif;
+	font-size:11px;
+	font-style:italic;
+	color:#000000;
+}
+
+.txtpiepagina {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	color:#888888;
+}
