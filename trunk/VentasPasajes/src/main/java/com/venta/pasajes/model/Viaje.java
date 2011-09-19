@@ -1,13 +1,15 @@
 package com.venta.pasajes.model;
 
+import java.sql.Date;
+
 public class Viaje {
 	
 	private int idViaje;
 	private Agencia agenciaOrigen;
 	private Agencia agenciaDestino;
-	private Bus bus;
-	private String fecha;
-	private String hora;
+	private Vehiculo bus;
+	private Date fecha;
+	private Date hora;
 	private double costoVip;
 	private double costoNegocio;
 	private double costoEconomico;
@@ -30,22 +32,22 @@ public class Viaje {
 	public void setAgenciaDestino(Agencia agenciaDestino) {
 		this.agenciaDestino = agenciaDestino;
 	}
-	public Bus getBus() {
+	public Vehiculo getBus() {
 		return bus;
 	}
-	public void setBus(Bus bus) {
+	public void setBus(Vehiculo bus) {
 		this.bus = bus;
 	}
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public String getHora() {
+	public Date getHora() {
 		return hora;
 	}
-	public void setHora(String hora) {
+	public void setHora(Date hora) {
 		this.hora = hora;
 	}
 	public double getCostoVip() {

@@ -1,10 +1,12 @@
 package com.venta.pasajes.model;
 
+import java.sql.Date;
+
 public class Boleto {
 
 	private int idBoleto;
 	private Usuario usuario;
-	private String fecha;
+	private Date fecha;
 	private double monto;
 	private Asiento asiento;
 	
@@ -20,10 +22,10 @@ public class Boleto {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	public double getMonto() {

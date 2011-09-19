@@ -22,8 +22,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	}
 
 	@Override
-	public Usuario buscarUsuario(String dni) {
-		return usuarioDao.buscarUsuario(dni);
+	public Usuario buscarUsuario(String codUsuario) {
+		return usuarioDao.buscarUsuario(codUsuario);
 	}
 
 	@Override

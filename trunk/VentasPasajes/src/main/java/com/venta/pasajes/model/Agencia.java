@@ -6,6 +6,16 @@ public class Agencia {
 	private String nombre;
 	private String direccion;
 	
+	public Agencia(){
+		
+	}
+	
+	public Agencia(int idAgencia, String nombre, String direccion) {
+		super();
+		this.idAgencia = idAgencia;
+		this.nombre = nombre;
+		this.direccion = direccion;
+	}
 	public int getIdAgencia() {
 		return idAgencia;
 	}
@@ -24,5 +34,4 @@ public class Agencia {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
 }

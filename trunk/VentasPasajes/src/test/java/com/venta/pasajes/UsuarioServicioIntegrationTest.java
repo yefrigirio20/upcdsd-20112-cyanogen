@@ -18,7 +18,7 @@ public class UsuarioServicioIntegrationTest {
 	
 	@Test
 	public void buscarUsuarioTest(){
-		Assert.assertEquals("jroa_3000@hotmail.com", usuarioServicio.buscarUsuario("42364208").getEmail());
+		Assert.assertEquals("42364208", usuarioServicio.buscarUsuario("JROA").getNumDocumento());
 	}
 	
 }

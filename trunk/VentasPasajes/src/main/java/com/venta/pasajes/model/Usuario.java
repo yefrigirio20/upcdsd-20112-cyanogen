@@ -2,6 +2,7 @@ package com.venta.pasajes.model;
 
 public class Usuario {
 	
+	private String codUsuario;
 	private String nomUsuario;
 	private String apepatUsuario;
 	private String apematUsuario;
@@ -59,5 +60,13 @@ public class Usuario {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getCodUsuario() {
+		return codUsuario;
+	}
+
+	public void setCodUsuario(String codUsuario) {
+		this.codUsuario = codUsuario;
 	}
 }

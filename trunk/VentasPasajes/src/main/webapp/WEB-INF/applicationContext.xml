@@ -9,8 +9,14 @@
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
 	<bean id="usuarioServicio" class="com.venta.pasajes.service.UsuarioServicioImpl" />
-
+	
 	<jaxws:endpoint id="usuarioServicioEndpoint" implementor="#usuarioServicio"
 		address="/usuarioServicio" />
+
+	<bean id="viajeService" class="com.venta.pasajes.service.ViajeServiceImpl" />
+
+	<jaxws:endpoint id="viajeServiceEndpoint" implementor="#viajeService"
+		address="/viajeService" />
+	
 
 </beans>
