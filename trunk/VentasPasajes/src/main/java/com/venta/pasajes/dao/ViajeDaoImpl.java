@@ -1,11 +1,12 @@
 package com.venta.pasajes.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.venta.pasajes.model.Agencia;
@@ -14,7 +15,6 @@ import com.venta.pasajes.model.Viaje;
 import com.venta.pasajes.util.ConexionBd;
 
 public class ViajeDaoImpl implements ViajeDao{
-
 	@Override
 	public List<Viaje> consultarViajes(Agencia agenciaOrigen,
 			Agencia agenciaDestino, Date fecha) {
@@ -28,12 +28,12 @@ public class ViajeDaoImpl implements ViajeDao{
 		List<Viaje> listaViajes = new ArrayList<Viaje>();
         try{
             cn = ConexionBd.getInstance().getConnection();
-            sql = "select * from viaje";
+            sql = "select * from viaje where idAgenciaOrigen = ? and idAgenciaDestino = ? and fecha = ?";
             pstm = cn.prepareStatement(sql);
             //ResultSet almacena los registros
-            //pstm.setInt(1, agenciaOrigen.getIdAgencia());
-            //pstm.setInt(2, agenciaDestino.getIdAgencia());
-            //pstm.setDate(3, fecha);
+            pstm.setInt(1, agenciaOrigen.getIdAgencia());
+            pstm.setInt(2, agenciaDestino.getIdAgencia());
+            pstm.setDate(3, new java.sql.Date(fecha.getTime()));
             rs = pstm.executeQuery(); //Ejecutar SQL SELECT
             while(rs.next()){
             	viaje = new Viaje();
