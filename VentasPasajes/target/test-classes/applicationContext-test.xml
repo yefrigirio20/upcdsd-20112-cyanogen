@@ -8,4 +8,9 @@
 		serviceClass="com.venta.pasajes.service.UsuarioServicio"
 		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/usuarioServicio" />
 
+
+	<jaxws:client id="viajeServiceClient"
+		serviceClass="com.venta.pasajes.service.ViajeService"
+		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/viajeService" />
+
 </beans>
