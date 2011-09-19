@@ -1,11 +1,23 @@
 package com.venta.pasajes.model;
 
-public class Bus {
+public class Vehiculo {
 	
 	private int idBus;
 	private String placa;
 	private int numAsiento;
 	private int estado;
+
+	public Vehiculo(){
+		
+	}
+	
+	public Vehiculo(int idBus, String placa, int numAsiento, int estado) {
+		super();
+		this.idBus = idBus;
+		this.placa = placa;
+		this.numAsiento = numAsiento;
+		this.estado = estado;
+	}
 	
 	public int getIdBus() {
 		return idBus;
