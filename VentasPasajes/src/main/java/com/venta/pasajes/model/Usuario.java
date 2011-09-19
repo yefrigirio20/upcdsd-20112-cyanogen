@@ -2,7 +2,6 @@ package com.venta.pasajes.model;
 
 public class Usuario {
 	
-	
 	private String nomUsuario;
 	private String apepatUsuario;
 	private String apematUsuario;
@@ -15,6 +14,7 @@ public class Usuario {
 	public String getNomUsuario() {
 		return nomUsuario;
 	}
+	
 	public void setNomUsuario(String nomUsuario) {
 		this.nomUsuario = nomUsuario;
 	}
@@ -60,7 +60,4 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
 }
