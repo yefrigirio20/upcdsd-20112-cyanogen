@@ -9,7 +9,6 @@ import com.venta.pasajes.model.Usuario;
 @WebService(endpointInterface="com.venta.pasajes.service.UsuarioServicio")
 public class UsuarioServicioImpl implements UsuarioServicio {
 
-
 	private UsuarioDao usuarioDao= new UsuarioDaoImpl();
 
 	@Override
@@ -23,8 +22,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	}
 
 	@Override
-	public Usuario buscarUsuario(int idUsuario) {
-		return usuarioDao.buscarUsuario(idUsuario);
+	public Usuario buscarUsuario(String dni) {
+		return usuarioDao.buscarUsuario(dni);
 	}
 
 	@Override
