@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-	<jaxws:client id="pasajesClient"
+	<jaxws:client id="usuarioServicioClient"
 		serviceClass="com.venta.pasajes.service.UsuarioServicio"
-		address="http://localhost:8080/venta-pasajes/services/pasajes" />
+		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/usuarioServicio" />
 
 </beans>
