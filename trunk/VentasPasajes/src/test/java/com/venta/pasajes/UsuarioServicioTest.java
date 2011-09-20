@@ -13,7 +13,7 @@ public class UsuarioServicioTest {
 	public void buscarUsuarioTest(){
 		Usuario usuario= null;
 		UsuarioServicio usuarioServicio = new UsuarioServicioImpl();
-		usuario = usuarioServicio.buscarUsuario("JROA");
+		usuario = usuarioServicio.buscarUsuario("JROA","123456");
 		Assert.assertEquals("42364208", usuario.getNumDocumento());
 	}
 
