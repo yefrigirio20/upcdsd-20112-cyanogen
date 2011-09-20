@@ -12,8 +12,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	private UsuarioDao usuarioDao= new UsuarioDaoImpl();
 
 	@Override
-	public void registrarUsuario(Usuario usuario) {
-		usuarioDao.registrarUsuario(usuario);
+	public Usuario registrarUsuario(Usuario usuario) {
+		return usuarioDao.registrarUsuario(usuario);
 	}
 
 	@Override
