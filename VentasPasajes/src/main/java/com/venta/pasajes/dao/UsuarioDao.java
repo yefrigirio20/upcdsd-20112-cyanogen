@@ -5,7 +5,7 @@ import com.venta.pasajes.model.Usuario;
 public interface UsuarioDao {
 	public Usuario registrarUsuario(Usuario usuario);
 	public void eliminarUsuario(Usuario usuario);
-	public Usuario buscarUsuario(String codUsuario);
+	public Usuario buscarUsuario(String codUsuario,String password);
 	public void actualizarUsuario(Usuario usuario);
 
 }

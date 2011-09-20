@@ -9,7 +9,7 @@ import com.venta.pasajes.model.Usuario;
 public interface UsuarioServicio {
 	public Usuario registrarUsuario(@WebParam(name = "usuario")Usuario usuario);
 	public void eliminarUsuario(@WebParam(name = "usuario")Usuario usuario);
-	public Usuario buscarUsuario(@WebParam(name = "codUsuario")String codUsuario);
+	public Usuario buscarUsuario(@WebParam(name = "codUsuario")String codUsuario, @WebParam(name = "password") String password);
 	public void actualizarUsuario(@WebParam(name = "usuario")Usuario usuario);
 	
 }

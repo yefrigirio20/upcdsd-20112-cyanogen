@@ -18,7 +18,7 @@ public class UsuarioServicioIntegrationTest {
 	
 	@Test
 	public void buscarUsuarioTest(){
-		Assert.assertEquals("42364208", usuarioServicio.buscarUsuario("JROA").getNumDocumento());
+		Assert.assertEquals("42364208", usuarioServicio.buscarUsuario("JROA","123456").getNumDocumento());
 	}
 	
 }

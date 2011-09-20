@@ -22,8 +22,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	}
 
 	@Override
-	public Usuario buscarUsuario(String codUsuario) {
-		return usuarioDao.buscarUsuario(codUsuario);
+	public Usuario buscarUsuario(String codUsuario, String password) {
+		return usuarioDao.buscarUsuario(codUsuario, password);
 	}
 
 	@Override

@@ -55,7 +55,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public Usuario buscarUsuario(String codUsuario) {
+	public Usuario buscarUsuario(String codUsuario, String password) {
 		//Usuario usuario= null;
 		//usuario = new Usuario();
 		//usuario.setNumDocumento("42364208");
@@ -67,10 +67,11 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		String sql;
         try{
             cn = ConexionBd.getInstance().getConnection();
-            sql = "select * from usuario where codUsuario = ?";
+            sql = "select * from usuario where codUsuario = ? and password = ?";
             pstm = cn.prepareStatement(sql);
             //ResultSet almacena los registros
             pstm.setString(1, codUsuario);
+            pstm.setString(2, password);
             rs = pstm.executeQuery(); //Ejecutar SQL SELECT
             while(rs.next()){
             	usuario.setCodUsuario(rs.getString("codUsuario"));
