@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,27 +44,33 @@ ddaccordion.init({
 
 </head>
 <body>
+
 <div id="main_container">
 
 	<div class="header_login">
+	
     <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
-    
+	     
     </div>
 
-     
+
          <div class="login_form">
          
          <h3>Ingreso al Sistema</h3>
          
          <a href="#" class="forgot_pass">Olvidaste tu Clave</a> 
-         
+                   
          <form action="principal.htm" method="post" class="niceform">
          
                 <fieldset>
+                
+    
+                       
                     <dl>
                         <dt><label for="email">Usuario:</label></dt>
-                        <dd><input type="text" name="codUsuario" id="codUsuario" size="54" /></dd>
+                        <dd><input type="text" name="codUsuario" id="codUsuario" size="54" /></dd>                      
                     </dl>
+                    
                     <dl>
                         <dt><label for="password">Clave:</label></dt>
                         <dd><input type="password" name="password" id="password" size="54" /></dd>
@@ -75,14 +82,20 @@ ddaccordion.init({
                     <input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Mantener mi sesion</label>
                         </dd>
                     </dl>
-                    
+                   
+                
+                   
                      <dl class="submit">
-                    <input type="submit" name="submit" id="submit" value="Ingresar" />
+						<c:if test="${claveErrada=='claveErrada'}" >
+						    Usuario o Clave Incorrecta
+						</c:if>   
+                    	<input type="submit" name="submit" id="submit" value="Ingresar" />
                      </dl>
                     
                 </fieldset>
                 
          </form>
+              
          </div>  
           
 	
