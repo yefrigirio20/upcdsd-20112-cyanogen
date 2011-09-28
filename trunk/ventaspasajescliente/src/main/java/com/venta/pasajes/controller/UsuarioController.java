@@ -43,7 +43,7 @@ public class UsuarioController {
 		usuario = usuarioService.buscarUsuario(codUsuario, password);
 		
 		if (usuario == null){
-			return new ModelAndView("login");
+			return new ModelAndView("login","claveErrada","claveErrada");
 		}else{
 			return new ModelAndView("viajelista","usuario",usuario);
 		}
