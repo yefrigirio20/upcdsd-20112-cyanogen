@@ -6,8 +6,8 @@ import com.venta.pasajes.dao.UsuarioDao;
 import com.venta.pasajes.dao.UsuarioDaoImpl;
 import com.venta.pasajes.model.Usuario;
 
-@WebService(endpointInterface="com.venta.pasajes.service.UsuarioServicio")
-public class UsuarioServicioImpl implements UsuarioServicio {
+@WebService(endpointInterface="com.venta.pasajes.service.UsuarioService")
+public class UsuarioServiceImpl implements UsuarioService {
 
 	private UsuarioDao usuarioDao= new UsuarioDaoImpl();
 
