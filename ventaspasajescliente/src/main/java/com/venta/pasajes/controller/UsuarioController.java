@@ -9,17 +9,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.ApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.venta.pasajes.model.Usuario;
 import com.venta.pasajes.service.UsuarioService;
-import com.venta.pasajes.service.UsuarioServiceImpl;
+
 
 @Controller
 public class UsuarioController {
 
+	@Autowired
+	private UsuarioService usuarioService;
+	
+	public void setUsuarioService(UsuarioService usuarioService){
+		this.usuarioService = usuarioService;
+	}
+	
 	protected final Log logger = LogFactory.getLog(getClass());
 	
 	@RequestMapping(value="/login.htm")
@@ -34,9 +44,9 @@ public class UsuarioController {
 	
 	@RequestMapping(value="/principal.htm")
 	public ModelAndView validarLogin(HttpServletRequest request, HttpServletResponse response){
+		
 		String codUsuario, password;
 		Usuario usuario = null;
-		UsuarioService usuarioService = new UsuarioServiceImpl();
 		codUsuario = request.getParameter("codUsuario");
 		password = request.getParameter("password");
 		
@@ -50,4 +60,5 @@ public class UsuarioController {
 		
 		
 	}
+	
 }
