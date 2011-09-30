@@ -63,7 +63,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		Connection cn = null;
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
-		Usuario usuario = new Usuario();
+		Usuario usuario = null;
 		String sql;
         try{
             cn = ConexionBd.getInstance().getConnection();
@@ -74,6 +74,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
             pstm.setString(2, password);
             rs = pstm.executeQuery(); //Ejecutar SQL SELECT
             while(rs.next()){
+            	usuario = new Usuario();
             	usuario.setCodUsuario(rs.getString("codUsuario"));
             	usuario.setNomUsuario(rs.getString("nomUsuario"));
             	usuario.setApepatUsuario(rs.getString("apepatUsuario"));

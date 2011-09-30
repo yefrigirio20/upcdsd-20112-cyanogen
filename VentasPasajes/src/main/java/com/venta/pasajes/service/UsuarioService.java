@@ -11,5 +11,4 @@ public interface UsuarioService {
 	public void eliminarUsuario(@WebParam(name = "usuario")Usuario usuario);
 	public Usuario buscarUsuario(@WebParam(name = "codUsuario")String codUsuario, @WebParam(name = "password") String password);
 	public void actualizarUsuario(@WebParam(name = "usuario")Usuario usuario);
-	
 }
