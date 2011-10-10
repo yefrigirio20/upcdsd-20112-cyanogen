@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.venta.pasajes.model.Usuario;
 import com.venta.pasajes.service.UsuarioService;
 
 @ContextConfiguration("/applicationContext-test.xml")
@@ -19,6 +20,26 @@ public class UsuarioServiceIntegrationTest {
 	@Test
 	public void buscarUsuarioTest(){
 		Assert.assertEquals("42364208", usuarioServicio.buscarUsuario("JROA","123456").getNumDocumento());
+	}
+	
+	@Test
+	public void registrarUsuarioText(){
+		Usuario usuario = new Usuario();
+		usuario.setCodUsuario("ADMIN");
+		usuario.setNomUsuario("Nombre");
+		usuario.setApepatUsuario("Diaz");
+		usuario.setApematUsuario("Hurtado");
+		usuario.setTipoDocumento(1);
+		usuario.setNumDocumento("12345678");
+		usuario.setEmail("elcorreo@hotmail.com");
+		usuario.setPassword("abcd1234");
+		
+		Assert.assertEquals(true,usuarioServicio.registrarUsuario(usuario));
+	}
+	
+	@Test
+	public void getListaTest(){
+		Assert.assertEquals(2,usuarioServicio.getLista().size());
 	}
 	
 }

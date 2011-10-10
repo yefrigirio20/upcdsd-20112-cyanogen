@@ -9,6 +9,13 @@
 		serviceClass="com.venta.pasajes.service.UsuarioService"
 		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/usuarioService" />
 
+	<jaxws:client id="agenciaServiceClient"
+		serviceClass="com.venta.pasajes.service.AgenciaService"
+		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/agenciaService" />
+
+	<jaxws:client id="busServiceClient"
+		serviceClass="com.venta.pasajes.service.BusService"
+		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/busService" />
 
 	<jaxws:client id="viajeServiceClient"
 		serviceClass="com.venta.pasajes.service.ViajeService"
