@@ -58,7 +58,7 @@ ddaccordion.init({
          
          <h3>Ingreso al Sistema</h3>
          
-         <a href="#" class="forgot_pass">Olvidaste tu Clave</a> 
+         <a href="abrir_registro_usuario.htm" class="forgot_pass">Registrarse</a> 
                    
          <form action="principal.htm" method="post" class="niceform">
          

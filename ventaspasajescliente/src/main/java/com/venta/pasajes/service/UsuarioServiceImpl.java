@@ -1,13 +1,15 @@
 package com.venta.pasajes.service;
 
+import java.util.List;
+
 import com.venta.pasajes.model.Usuario;
 
 public class UsuarioServiceImpl implements UsuarioService{
 
 	@Override
-	public Usuario registrarUsuario(Usuario usuario) {
+	public boolean registrarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
 	}
 
 	@Override
@@ -40,5 +42,11 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public void actualizarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Usuario> getLista() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
