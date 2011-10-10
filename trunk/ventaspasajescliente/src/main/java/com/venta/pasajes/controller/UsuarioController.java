@@ -57,8 +57,33 @@ public class UsuarioController {
 		}else{
 			return new ModelAndView("viajelista","usuario",usuario);
 		}
+	}
+
+	@RequestMapping(value="/abrir_registro_usuario.htm")
+	public ModelAndView abrirRegistroUsuario(HttpServletRequest request, HttpServletResponse response){
 		
+		return new ModelAndView("usuario_nuevo");
+	}
+	
+	@RequestMapping(value="/registrar_usuario.htm")
+	public ModelAndView registarUsuario(HttpServletRequest request, HttpServletResponse response){
+		Usuario usuario = new Usuario();
 		
+		usuario.setCodUsuario(request.getParameter("txtcodUsuario"));
+		usuario.setApepatUsuario(request.getParameter("txtapellidoPaterno"));
+		usuario.setApematUsuario(request.getParameter("txtapellidoMaterno"));
+		usuario.setNomUsuario(request.getParameter("txtnombre"));
+		usuario.setTipoDocumento(1);
+		usuario.setNumDocumento(request.getParameter("txtdni"));
+		usuario.setSexo(1);
+		usuario.setEmail(request.getParameter("txtemail"));
+		usuario.setPassword(request.getParameter("txtpassword"));
+		
+		if (usuarioService.registrarUsuario(usuario)){
+			return new ModelAndView("viajelista","usuario",usuario);
+		}else{
+			return new ModelAndView("usuario_nuevo");
+		}
 	}
 	
 }
