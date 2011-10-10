@@ -1,18 +1,22 @@
 package com.venta.pasajes.service;
 
+import java.util.List;
+
 import javax.jws.WebService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.venta.pasajes.dao.UsuarioDao;
-import com.venta.pasajes.dao.UsuarioDaoImpl;
 import com.venta.pasajes.model.Usuario;
 
 @WebService(endpointInterface="com.venta.pasajes.service.UsuarioService")
 public class UsuarioServiceImpl implements UsuarioService {
 
-	private UsuarioDao usuarioDao= new UsuarioDaoImpl();
+	@Autowired
+	private UsuarioDao usuarioDao;
 
 	@Override
-	public Usuario registrarUsuario(Usuario usuario) {
+	public boolean registrarUsuario(Usuario usuario) {
 		return usuarioDao.registrarUsuario(usuario);
 	}
 
@@ -30,5 +34,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public void actualizarUsuario(Usuario usuario) {
 		usuarioDao.actualizarUsuario(usuario);
 		
+	}
+
+	@Override
+	public List<Usuario> getLista() {
+		return usuarioDao.getLista();
 	}
 }

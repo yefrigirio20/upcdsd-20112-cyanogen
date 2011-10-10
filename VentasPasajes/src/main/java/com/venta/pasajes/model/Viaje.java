@@ -7,12 +7,10 @@ public class Viaje {
 	private int idViaje;
 	private Agencia agenciaOrigen;
 	private Agencia agenciaDestino;
-	private Vehiculo bus;
+	private Bus bus;
 	private Date fecha;
 	private Date hora;
-	private double costoVip;
-	private double costoNegocio;
-	private double costoEconomico;
+	private Double costo;
 	
 	public int getIdViaje() {
 		return idViaje;
@@ -32,10 +30,10 @@ public class Viaje {
 	public void setAgenciaDestino(Agencia agenciaDestino) {
 		this.agenciaDestino = agenciaDestino;
 	}
-	public Vehiculo getBus() {
+	public Bus getBus() {
 		return bus;
 	}
-	public void setBus(Vehiculo bus) {
+	public void setBus(Bus bus) {
 		this.bus = bus;
 	}
 	public Date getFecha() {
@@ -50,25 +48,11 @@ public class Viaje {
 	public void setHora(Date hora) {
 		this.hora = hora;
 	}
-	public double getCostoVip() {
-		return costoVip;
+	public Double getCosto() {
+		return costo;
 	}
-	public void setCostoVip(double costoVip) {
-		this.costoVip = costoVip;
+	public void setCosto(Double costo) {
+		this.costo = costo;
 	}
-	public double getCostoNegocio() {
-		return costoNegocio;
-	}
-	public void setCostoNegocio(double costoNegocio) {
-		this.costoNegocio = costoNegocio;
-	}
-	public double getCostoEconomico() {
-		return costoEconomico;
-	}
-	public void setCostoEconomico(double costoEconomico) {
-		this.costoEconomico = costoEconomico;
-	}
-	
-	
 	
 }
