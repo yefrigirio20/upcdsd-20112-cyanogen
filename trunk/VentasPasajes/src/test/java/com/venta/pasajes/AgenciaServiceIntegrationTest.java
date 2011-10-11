@@ -21,4 +21,8 @@ public class AgenciaServiceIntegrationTest {
 		Assert.assertEquals(7, agenciaService.getLista().size());
 	}
 	
+	@Test
+	public void buscarAgenciaTest(){
+		Assert.assertEquals("LIMA", agenciaService.buscarAgencia(0).getNombre());
+	}
 }

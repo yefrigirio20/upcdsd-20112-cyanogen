@@ -26,4 +26,12 @@ public class AgenciaDaoJdbc extends SimpleJdbcDaoSupport implements AgenciaDao{
 		return getSimpleJdbcTemplate().query(sql, new BeanPropertyRowMapper<Agencia>(Agencia.class));
 	}
 
+	@Override
+	public Agencia buscarAgencia(int idAgencia) {
+		String sql = "select idAgencia, nombre, direccion from agencia where idAgencia =?";
+		return getSimpleJdbcTemplate().queryForObject(
+				sql, new BeanPropertyRowMapper<Agencia>(Agencia.class),
+				idAgencia);
+	}
+
 }

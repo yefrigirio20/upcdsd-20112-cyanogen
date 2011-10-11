@@ -29,7 +29,6 @@ public class UsuarioServiceIntegrationTest {
 		usuario.setNomUsuario("Nombre");
 		usuario.setApepatUsuario("Diaz");
 		usuario.setApematUsuario("Hurtado");
-		usuario.setTipoDocumento(1);
 		usuario.setNumDocumento("12345678");
 		usuario.setEmail("elcorreo@hotmail.com");
 		usuario.setPassword("abcd1234");

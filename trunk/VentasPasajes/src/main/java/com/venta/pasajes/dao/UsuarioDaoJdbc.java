@@ -24,17 +24,15 @@ public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
 	public boolean registrarUsuario(Usuario usuario) {
 		String sql = 
 				"insert into usuario " +
-				"(codUsuario,nomUsuario, apepatUsuario, apematUsuario, tipoDocumento, numDocumento, sexo, email, password) " +
-				"values(?,?,?,?,?,?,?,?,?)";
+				"(codUsuario,nomUsuario, apepatUsuario, apematUsuario, numDocumento, email, password) " +
+				"values(?,?,?,?,?,?,?)";
 		try{
 			getSimpleJdbcTemplate().update(sql, 
 					usuario.getCodUsuario(),
 					usuario.getNomUsuario(),
 					usuario.getApepatUsuario(),
 					usuario.getApematUsuario(),
-					usuario.getTipoDocumento(),
 					usuario.getNumDocumento(),
-					usuario.getSexo(),
 					usuario.getEmail(),
 					usuario.getPassword());
 			return true;
@@ -55,7 +53,7 @@ public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
 			return getSimpleJdbcTemplate()
 					.queryForObject(
 							"select codUsuario,nomUsuario, apepatUsuario, apematUsuario, " +
-							"tipoDocumento, numDocumento, sexo, email, password " +
+							"numDocumento, email, password " +
 							"from usuario " +
 							"where codUsuario=? and password=?",
 							new BeanPropertyRowMapper<Usuario>(Usuario.class),
@@ -74,7 +72,7 @@ public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
 	public List<Usuario> getLista() {
 		String sql = 
 		"select codUsuario,nomUsuario, apepatUsuario, apematUsuario, " +
-		"tipoDocumento, numDocumento, sexo, email, password " +
+		"numDocumento, email, password " +
 		"from usuario ";
 		return getSimpleJdbcTemplate().query(sql, new BeanPropertyRowMapper<Usuario>(Usuario.class));
 	}	
