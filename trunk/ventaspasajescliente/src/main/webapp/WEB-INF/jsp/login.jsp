@@ -56,16 +56,13 @@ ddaccordion.init({
 
          <div class="login_form">
          
-         <h3>Ingreso al Sistema</h3>
+         <h3>LOGIN</h3>
          
-         <a href="abrir_registro_usuario.htm" class="forgot_pass">Registrarse</a> 
+         
                    
          <form action="principal.htm" method="post" class="niceform">
          
-                <fieldset>
-                
-    
-                       
+                <fieldset>                      
                     <dl>
                         <dt><label for="email">Usuario:</label></dt>
                         <dd><input type="text" name="codUsuario" id="codUsuario" size="54" /></dd>                      
@@ -90,6 +87,7 @@ ddaccordion.init({
 						    Usuario o Clave Incorrecta
 						</c:if>   
                     	<input type="submit" name="submit" id="submit" value="Ingresar" />
+                    	<a href="abrir_registro_usuario.htm" class="bt_green"><span class="bt_green_lft"></span><strong>Registrarse</strong><span class="bt_green_r"></span></a>
                      </dl>
                     
                 </fieldset>

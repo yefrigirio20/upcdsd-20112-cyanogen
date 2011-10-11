@@ -54,7 +54,7 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Bienvenido ${usuario.nomUsuario} ${usuario.apepatUsuario} | <a href="#" class="messages">(3) Mensajes</a> | <a href="#" class="logout">Desconectarse</a></div>
+    <div class="right_header">Listado de Viajes    <a href="#" class="logout">Desconectarse</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -122,47 +122,49 @@ $(function($) {
     
       <div class="right_content">            
         
-        <h2>Registro de Viaje</h2> 
-                    
-                    
-<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-    	<tr>
-            <th scope="col" class="rounded-company">Origen</th>
-            <th scope="col" class="rounded">Destino</th>
-            <th scope="col" class="rounded">Tipo</th>
-            <th scope="col" class="rounded">Placa</th>
-            <th scope="col" class="rounded">Fecha</th>
-            <th scope="col" class="rounded">Hora</th>
-            <th scope="col" class="rounded">Piso 1</th>
-            <th scope="col" class="rounded">Piso 2</th>
-            <th scope="col" class="rounded">&nbsp;</th>
-            <th scope="col" class="rounded-q4">&nbsp;</th>
-        </tr>
-    </thead>
-        <tfoot>
-    	<tr>
-        	<td colspan="9" class="rounded-foot-left"><em>Listado de Viajes</em></td>
-        	<td class="rounded-foot-right">&nbsp;</td>
+        <h2>Itinerario : ${agenciaOrigen.nombre} - ${agenciaDestino.nombre} </h2> 
+<div class="form"> 
+<form action="login.htm" method="post" class="niceform">
+	<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+	    <thead>
+	    	<tr>
+	            <th scope="col" class="rounded-company"> </th>
+	            <th scope="col" class="rounded">Origen</th>
+	            <th scope="col" class="rounded">Destino</th>
+	            <th scope="col" class="rounded">Placa</th>
+	            <th scope="col" class="rounded">Fecha</th>
+	            <th scope="col" class="rounded">Hora</th>
+	            <th scope="col" class="rounded-q4">Costo</th>
+	        </tr>
+	    </thead>
+	        <tfoot>
+	    	<tr>
+	        	<td colspan="6" class="rounded-foot-left"><em>Listado de Viajes</em></td>
+	        	<td class="rounded-foot-right">&nbsp;</td>
+	
+	        </tr>
+	    </tfoot>
+	    <tbody>
+	    	<c:forEach items="${tarifas}" var="tarifa">
+	    	<tr>
+	    		<td><input type="radio" id="idViaje" name="idViaje" value="${tarifa.idViaje}" /></td>
+	            <td>${tarifa.nombreAgenciaOrigen}</td>
+	            <td>${tarifa.nombreAgenciaDestino}</td>
+	            <td>${tarifa.placaBus}</td>
+				<td>${tarifa.formatoFecha}</td>
+				<td>${tarifa.formatoHora}</td>            
+				<td>${tarifa.costo}</td>            
+	        </tr>
+	        </c:forEach>
+	    </tbody>
+	</table>
+	
+	<dl class="submit">
+		<input type="submit" name="btnContinuar" id="btnContinuar" value="Continuar" />
+	</dl>
+</form>	
+</div>
 
-        </tr>
-    </tfoot>
-    <tbody>
-    	<tr>
-            <td>LIMA</td>
-            <td>TACNA</td>
-            <td>VIP</td>
-            <td>XYZ-123</td>
-			<td>08/09/2011</td>
-			<td>01:00 AM</td>            
-			<td>50.00</td>            
-			<td>40.00</td>                                    
-            <td><a href="viaje_modificar.html" ><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
-        </tr>
-        
-    </tbody>
-</table>
 <h2>&nbsp;</h2>
   <h2>&nbsp;</h2>
   </div><!-- end of right content-->
