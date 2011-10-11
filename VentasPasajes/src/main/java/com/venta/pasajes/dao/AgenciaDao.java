@@ -6,4 +6,5 @@ import com.venta.pasajes.model.Agencia;
 
 public interface AgenciaDao {
 	public List<Agencia> getLista();
+	public Agencia buscarAgencia(int idAgencia);
 }

@@ -55,9 +55,10 @@ public class ViajeServiceIntegrationTest {
 	@Test
 	public void consultarTarifasTest() throws ParseException{
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-		Agencia agenciaOrigen = new Agencia(1,null,null);
-		Agencia agenciaDestino = new Agencia(2,null,null);
-		Date fecha = formato.parse("05/11/2011");
+		Agencia agenciaOrigen = new Agencia(0,null,null);
+		Agencia agenciaDestino = new Agencia(1,null,null);
+		Date fecha = formato.parse("11/11/2011");
 		Assert.assertEquals(1, viajeService.consultarTarifa(agenciaOrigen, agenciaDestino, fecha).size());
 	}
+	
 }

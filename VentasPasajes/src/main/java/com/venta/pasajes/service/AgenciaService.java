@@ -9,4 +9,5 @@ import com.venta.pasajes.model.Agencia;
 @WebService
 public interface AgenciaService {
 	public List<Agencia> getLista();
+	public Agencia buscarAgencia(int idAgencia);
 }

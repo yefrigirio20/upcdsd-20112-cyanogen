@@ -20,4 +20,9 @@ public class AgenciaServiceImpl implements AgenciaService{
 		return agenciaDao.getLista();
 	}
 
+	@Override
+	public Agencia buscarAgencia(int idAgencia) {
+		return agenciaDao.buscarAgencia(idAgencia);
+	}
+
 }

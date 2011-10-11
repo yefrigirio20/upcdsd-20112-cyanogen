@@ -4,9 +4,7 @@ create table usuario (
   nomUsuario varchar(30),
   apepatUsuario varchar(30),
   apematUsuario varchar(30),
-  tipoDocumento integer,
   numDocumento varchar(10),
-  sexo integer,
   email varchar(30),
   password varchar(30),
   constraint usuario_pk primary key(codUsuario)

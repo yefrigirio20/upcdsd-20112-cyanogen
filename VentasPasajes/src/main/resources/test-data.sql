@@ -1,5 +1,5 @@
-insert into usuario(codUsuario,nomUsuario, apepatUsuario, apematUsuario, tipoDocumento, numDocumento, sexo, email, password)
-values('JROA','Jonathan','Roa','Cansaya',1,'42364208',1,'jroa_3000@hotmail.com','123456');
+insert into usuario(codUsuario,nomUsuario, apepatUsuario, apematUsuario, numDocumento, email, password)
+values('JROA','Jonathan','Roa','Cansaya','42364208','jroa_3000@hotmail.com','123456');
 
 insert into agencia(nombre,	direccion)
 values ('LIMA','Direccion 1');
@@ -32,16 +32,56 @@ values('DDD-123',40, 0);
 insert into viaje
 (idAgenciaOrigen,idAgenciaDestino, idBus, fecha, hora, costo)
 values
-(1,2,1,'2011-11-05','2011-11-05 12:00:00',50.00);
+(0,1,0,'2011-11-11','2011-11-11 12:00:00',50.00);
 insert into viaje
 (idAgenciaOrigen,idAgenciaDestino, idBus, fecha, hora, costo)
 values
-(1,2,1,'2011-11-07','2011-11-07 12:00:00',50.00);
+(0,1,1,'2011-11-11','2011-11-11 13:00:00',60.00);
 insert into viaje
 (idAgenciaOrigen,idAgenciaDestino, idBus, fecha, hora, costo)
 values
-(1,2,1,'2011-11-09','2011-11-09 12:00:00',50.00);
+(0,1,2,'2011-11-11','2011-11-11 14:00:00',70.00);
 
+insert into asiento(idViaje, numAsiento, estado) values (0,1,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,2,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,3,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,4,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,5,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,6,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,7,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,8,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,9,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,10,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,11,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,12,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,13,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,14,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,15,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,16,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,17,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,18,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,19,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,20,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,21,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,22,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,23,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,24,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,25,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,26,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,27,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,28,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,29,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,30,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,31,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,32,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,33,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,34,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,35,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,36,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,37,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,38,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,39,0);
+insert into asiento(idViaje, numAsiento, estado) values (0,40,0);
 
 insert into asiento(idViaje, numAsiento, estado) values (1,1,0);
 insert into asiento(idViaje, numAsiento, estado) values (1,2,0);
@@ -125,45 +165,5 @@ insert into asiento(idViaje, numAsiento, estado) values (2,38,0);
 insert into asiento(idViaje, numAsiento, estado) values (2,39,0);
 insert into asiento(idViaje, numAsiento, estado) values (2,40,0);
 
-insert into asiento(idViaje, numAsiento, estado) values (3,1,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,2,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,3,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,4,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,5,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,6,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,7,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,8,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,9,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,10,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,11,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,12,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,13,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,14,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,15,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,16,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,17,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,18,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,19,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,20,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,21,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,22,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,23,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,24,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,25,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,26,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,27,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,28,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,29,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,30,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,31,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,32,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,33,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,34,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,35,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,36,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,37,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,38,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,39,0);
-insert into asiento(idViaje, numAsiento, estado) values (3,40,0);
 
 
