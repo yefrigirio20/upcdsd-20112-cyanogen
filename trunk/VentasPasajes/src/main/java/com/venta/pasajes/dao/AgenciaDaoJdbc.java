@@ -28,10 +28,14 @@ public class AgenciaDaoJdbc extends SimpleJdbcDaoSupport implements AgenciaDao{
 
 	@Override
 	public Agencia buscarAgencia(int idAgencia) {
+		try{
 		String sql = "select idAgencia, nombre, direccion from agencia where idAgencia =?";
 		return getSimpleJdbcTemplate().queryForObject(
 				sql, new BeanPropertyRowMapper<Agencia>(Agencia.class),
 				idAgencia);
+		}catch(Exception ex){
+			return null;
+		}
 	}
 
 }

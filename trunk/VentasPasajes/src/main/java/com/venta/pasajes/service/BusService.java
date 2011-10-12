@@ -9,4 +9,5 @@ import com.venta.pasajes.model.Bus;
 @WebService
 public interface BusService {
 	public List<Bus> getLista();
+	public Bus buscarBus(int idBus);
 }

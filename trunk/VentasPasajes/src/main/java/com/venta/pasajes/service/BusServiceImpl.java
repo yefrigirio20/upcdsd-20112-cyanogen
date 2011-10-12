@@ -20,4 +20,10 @@ public class BusServiceImpl implements BusService{
 		return busDao.getLista();
 	}
 
+	@Override
+	public Bus buscarBus(int idBus) {
+		return busDao.buscarBus(idBus);
+	}
+
+	
 }

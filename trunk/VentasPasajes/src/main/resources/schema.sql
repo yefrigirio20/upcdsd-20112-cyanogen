@@ -42,6 +42,7 @@ drop table asiento if exists;
 create table asiento(
 	idAsiento integer primary key identity,
 	idViaje integer,
+	codUsuario varchar(30),
 	numAsiento integer,
 	estado integer
 );

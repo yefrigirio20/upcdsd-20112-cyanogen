@@ -14,7 +14,7 @@ import com.venta.pasajes.model.Usuario;
 
 @Repository
 public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
-
+	
 	@Autowired
 	public UsuarioDaoJdbc(DataSource dataSource){
 		setDataSource(dataSource);
@@ -39,7 +39,6 @@ public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
 		}catch(Exception ex){
 			return false;
 		}
-		
 	}
 
 	@Override
@@ -75,6 +74,22 @@ public class UsuarioDaoJdbc extends SimpleJdbcDaoSupport implements UsuarioDao{
 		"numDocumento, email, password " +
 		"from usuario ";
 		return getSimpleJdbcTemplate().query(sql, new BeanPropertyRowMapper<Usuario>(Usuario.class));
+	}
+
+	@Override
+	public Usuario buscarUsuario(String codUsuario) {
+		try {
+			return getSimpleJdbcTemplate()
+					.queryForObject(
+							"select codUsuario,nomUsuario, apepatUsuario, apematUsuario, " +
+							"numDocumento, email, password " +
+							"from usuario " +
+							"where codUsuario=?",
+							new BeanPropertyRowMapper<Usuario>(Usuario.class),
+							codUsuario);
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}	
 
 }

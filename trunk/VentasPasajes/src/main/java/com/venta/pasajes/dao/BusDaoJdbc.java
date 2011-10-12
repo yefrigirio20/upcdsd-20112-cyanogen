@@ -25,4 +25,15 @@ public class BusDaoJdbc extends SimpleJdbcDaoSupport implements BusDao{
 		return getSimpleJdbcTemplate().query(sql, new BeanPropertyRowMapper<Bus>(Bus.class));
 	}
 
+	@Override
+	public Bus buscarBus(int idBus) {
+		try{
+		String sql = "select idBus, placa, numAsiento, estado from bus where idBus = ?";
+		return getSimpleJdbcTemplate().queryForObject(
+				sql,new BeanPropertyRowMapper<Bus>(Bus.class),idBus);
+		}catch(Exception ex){
+			return null;
+		}
+	}
+
 }

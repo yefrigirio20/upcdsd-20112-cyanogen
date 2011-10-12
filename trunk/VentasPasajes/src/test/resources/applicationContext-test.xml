@@ -21,4 +21,5 @@
 		serviceClass="com.venta.pasajes.service.ViajeService"
 		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/viajeService" />
 
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 </beans>

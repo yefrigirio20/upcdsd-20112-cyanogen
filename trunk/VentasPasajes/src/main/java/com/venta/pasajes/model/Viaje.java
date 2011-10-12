@@ -12,6 +12,19 @@ public class Viaje {
 	private Date hora;
 	private Double costo;
 	
+	public Viaje(){}
+	
+	public Viaje(int idViaje, Agencia agenciaOrigen, Agencia agenciaDestino,
+		Bus bus, Date fecha, Date hora, Double costo) {
+		this.idViaje = idViaje;
+		this.agenciaOrigen = agenciaOrigen;
+		this.agenciaDestino = agenciaDestino;
+		this.bus = bus;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.costo = costo;
+	}
+	
 	public int getIdViaje() {
 		return idViaje;
 	}

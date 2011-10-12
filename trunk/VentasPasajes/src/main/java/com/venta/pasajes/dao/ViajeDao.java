@@ -12,4 +12,5 @@ public interface ViajeDao {
 	public List<Viaje> consultarViajes(Agencia agenciaOrigen, Agencia agenciaDestino, Date fecha);
 	public boolean registrarViaje(Viaje viaje);
 	public List<Tarifa> consultarTarifas(Agencia agenciaOrigen, Agencia agenciaDestino, Date fecha);
+	public Viaje buscarViaje(int idViaje);
 }
