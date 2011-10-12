@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -18,6 +19,15 @@ import com.venta.pasajes.util.Constantes;
 
 @Repository
 public class ViajeDaoJdbc extends SimpleJdbcDaoSupport implements ViajeDao{
+
+	private Logger logger = Logger
+			.getLogger(ViajeDaoJdbc.class);
+	
+	@Autowired
+	private BusDao busDao;
+	
+	@Autowired
+	private AgenciaDao agenciaDao;
 	
 	@Autowired
 	public ViajeDaoJdbc(DataSource dataSource){
@@ -92,5 +102,28 @@ public class ViajeDaoJdbc extends SimpleJdbcDaoSupport implements ViajeDao{
 		}
 		
 		return tarifas;
+	}
+
+	@Override
+	public Viaje buscarViaje(int idViaje) {
+		Viaje viaje = null;
+		String sql = "select idViaje, idAgenciaOrigen, idAgenciaDestino, idBus, fecha, hora, costo from viaje where idViaje = ?";
+		try{
+			Map<String,Object> row = getJdbcTemplate().queryForMap(sql,idViaje);
+			viaje = new Viaje();
+			viaje.setIdViaje((Integer)row.get("idViaje"));
+			viaje.setAgenciaOrigen(agenciaDao.buscarAgencia((Integer)row.get("idAgenciaOrigen")));
+			viaje.setAgenciaDestino(agenciaDao.buscarAgencia((Integer)row.get("idAgenciaDestino")));
+			viaje.setBus(busDao.buscarBus((Integer)row.get("idBus")));
+			viaje.setFecha((Date)row.get("fecha"));
+			viaje.setHora((Date)row.get("hora"));
+			viaje.setCosto((Double)row.get("costo"));
+			
+			return viaje;
+		}catch(Exception ex){
+			logger.debug(ex.getMessage());
+			return null;
+		}
+		
 	}
 }

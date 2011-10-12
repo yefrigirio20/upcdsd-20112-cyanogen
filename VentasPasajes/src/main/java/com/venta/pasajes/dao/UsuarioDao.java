@@ -10,5 +10,5 @@ public interface UsuarioDao {
 	public Usuario buscarUsuario(String codUsuario,String password);
 	public void actualizarUsuario(Usuario usuario);
 	public List<Usuario> getLista();
-
+	public Usuario buscarUsuario(String codUsuario);
 }

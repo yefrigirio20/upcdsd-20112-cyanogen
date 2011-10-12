@@ -30,4 +30,5 @@ public class ViajeServiceTest {
 		listaViajes = viajeService.consultarViajes(agenciaOrigen, agenciaDestino, fecha);
 		Assert.assertNotNull(listaViajes);
 	}
+	
 }

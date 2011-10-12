@@ -20,4 +20,15 @@ public class BusServiceIntegrationTest {
 	public void getListaTest(){
 		Assert.assertEquals(5,busService.getLista().size());
 	}
+	
+	@Test
+	public void buscarBusTest(){
+		Assert.assertEquals("ABC-123",busService.buscarBus(1).getPlaca());
+	}
+	
+	@Test
+	public void buscarBusYNoEncontrarTest(){
+		Assert.assertNull(busService.buscarBus(555));
+	}
+	
 }

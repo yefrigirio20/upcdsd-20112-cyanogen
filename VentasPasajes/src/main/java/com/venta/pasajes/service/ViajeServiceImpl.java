@@ -37,4 +37,9 @@ public class ViajeServiceImpl implements ViajeService {
 		
 		return viajeDao.consultarTarifas(agenciaOrigen, agenciaDestino, fecha);
 	}
+
+	@Override
+	public Viaje buscarViaje(int idViaje) {
+		return viajeDao.buscarViaje(idViaje);
+	}
 }

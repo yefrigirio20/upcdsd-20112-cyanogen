@@ -25,4 +25,9 @@ public class AgenciaServiceIntegrationTest {
 	public void buscarAgenciaTest(){
 		Assert.assertEquals("LIMA", agenciaService.buscarAgencia(0).getNombre());
 	}
+	
+	@Test
+	public void buscaAgenciaYNoEncontrar(){
+		Assert.assertNull(agenciaService.buscarAgencia(9999));
+	}
 }

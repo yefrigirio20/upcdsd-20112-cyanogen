@@ -58,7 +58,19 @@ public class ViajeServiceIntegrationTest {
 		Agencia agenciaOrigen = new Agencia(0,null,null);
 		Agencia agenciaDestino = new Agencia(1,null,null);
 		Date fecha = formato.parse("11/11/2011");
-		Assert.assertEquals(1, viajeService.consultarTarifa(agenciaOrigen, agenciaDestino, fecha).size());
+		Assert.assertEquals(3, viajeService.consultarTarifa(agenciaOrigen, agenciaDestino, fecha).size());
 	}
 	
+	@Test
+	public void buscarViajeTest(){
+		Viaje viaje = viajeService.buscarViaje(1);
+		Assert.assertNotNull(viaje);
+		Assert.assertEquals("ABC-123", viajeService.buscarViaje(1).getBus().getPlaca());
+	}
+	
+	@Test
+	public void buscarViajeYNoEncontrar(){
+		Viaje viaje = viajeService.buscarViaje(9999);
+		Assert.assertNull(viaje);
+	}
 }

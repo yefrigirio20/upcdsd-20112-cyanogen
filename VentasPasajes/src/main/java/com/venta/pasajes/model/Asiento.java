@@ -5,9 +5,19 @@ public class Asiento {
 	
 	private int idAsiento;
 	private Viaje viaje;
+	private Usuario usuario;
 	private int numAsiento;
 	private int estado;
 	
+	public Asiento(){}
+	
+	public Asiento(int idAsiento, Viaje viaje, Usuario usuario, int numAsiento, int estado) {
+		this.idAsiento = idAsiento;
+		this.viaje = viaje;
+		this.usuario = usuario;
+		this.numAsiento = numAsiento;
+		this.estado = estado;
+	}
 	
 	public int getIdAsiento() {
 		return idAsiento;
@@ -21,6 +31,12 @@ public class Asiento {
 	public void setViaje(Viaje viaje) {
 		this.viaje = viaje;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public int getNumAsiento() {
 		return numAsiento;
 	}
@@ -33,7 +49,4 @@ public class Asiento {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-	
-	
-	
 }
