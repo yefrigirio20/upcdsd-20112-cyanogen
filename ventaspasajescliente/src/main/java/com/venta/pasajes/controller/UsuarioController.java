@@ -45,7 +45,7 @@ public class UsuarioController {
 			return "viajelista";
 		}
 	}
-
+	
 	@RequestMapping(value="/abrir_registro_usuario.htm")
 	public String abrirRegistroUsuario(){
 		return "usuario_nuevo";

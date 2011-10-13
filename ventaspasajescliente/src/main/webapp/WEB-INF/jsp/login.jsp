@@ -60,7 +60,7 @@ ddaccordion.init({
          
          
                    
-         <form action="principal.htm" method="post" class="niceform">
+         <form action="asiento.htm" method="post" class="niceform">
          
                 <fieldset>                      
                     <dl>

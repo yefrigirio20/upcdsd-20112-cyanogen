@@ -54,7 +54,7 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Listado de Viajes    <a href="#" class="logout">Desconectarse</a></div>
+    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -96,81 +96,118 @@ $(function($) {
 
                     
                     </ul>
-                    </div>  
+                    </div> 
                     
                     
                     
                     
-    <div class="center_content">
-    <div class="left_content">
-    
-    		<div class="sidebar_search">
-            <form>
-            <input type="text" name="" class="search_input" value="buscar..." onclick="this.value=''" />
-            <input type="image" class="search_submit" src="images/search.png" />
-            </form>            
-            </div>
-    
-        <div class="sidebarmenu">
-          <a class="menuitem" href="viaje_nuevo.html">Nuevo</a></div>
-            
-            
-        
-    </div>
-    
-    
-    
-      <div class="right_content">            
-        
-        <h2>Itinerario : ${agenciaOrigen.nombre} - ${agenciaDestino.nombre} ${usuarioSession.nomUsuario}</h2> 
-<div class="form"> 
-<form action="asiento.htm" method="post" class="niceform">
-	<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-	    <thead>
-	    	<tr>
-	            <th scope="col" class="rounded-company"> </th>
-	            <th scope="col" class="rounded">Origen</th>
-	            <th scope="col" class="rounded">Destino</th>
-	            <th scope="col" class="rounded">Placa</th>
-	            <th scope="col" class="rounded">Fecha</th>
-	            <th scope="col" class="rounded">Hora</th>
-	            <th scope="col" class="rounded-q4">Costo</th>
-	        </tr>
-	    </thead>
-	        <tfoot>
-	    	<tr>
-	        	<td colspan="6" class="rounded-foot-left"><em>Listado de Viajes</em></td>
-	        	<td class="rounded-foot-right">&nbsp;</td>
-	
-	        </tr>
-	    </tfoot>
-	    <tbody>
-	    	<c:forEach items="${tarifas}" var="tarifa">
-	    	<tr>
-	    		<td><input type="radio" id="idViaje" name="idViaje" value="${tarifa.idViaje}" /></td>
-	            <td>${tarifa.nombreAgenciaOrigen}</td>
-	            <td>${tarifa.nombreAgenciaDestino}</td>
-	            <td>${tarifa.placaBus}</td>
-				<td>${tarifa.formatoFecha}</td>
-				<td>${tarifa.formatoHora}</td>            
-				<td>${tarifa.costo}</td>            
-	        </tr>
-	        </c:forEach>
-	    </tbody>
-	</table>
-	
-	<dl class="submit">
-		<input type="submit" name="btnContinuar" id="btnContinuar" value="Continuar" />
-	</dl>
-</form>	
+	<div class="center_content">
+
+<div class="left_content">
+	<div class="sidebarmenu">
+		<a class="menuitem" href="login.htm">Login</a>
+	</div>
 </div>
 
-<h2>&nbsp;</h2>
-  <h2>&nbsp;</h2>
-  </div><!-- end of right content-->
+
+<div class="right_content">            
+        
+
+     
+
+<h2>Distribucion de Asientos </h2>
+
+
+<table>
+
+<c:forEach items="${listaFilaAsientos}" var="filaAsiento">
+	
+<tr>
+	<td>
+		<c:if test="${filaAsiento.existeAsientoA==1}">
+			<c:if test="${filaAsiento.asientoA.estado==0}">
+				<a href="#" class="bt_green">
+				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoA.numeroAsiento}</strong><span class="bt_green_r"></span>
+				</a>				
+			</c:if>
+
+			<c:if test="${filaAsiento.asientoA.estado==1}">
+				<a href="#" class="bt_red">
+				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoA.numeroAsiento}</strong><span class="bt_red_r"></span>
+				</a>							
+			</c:if>			
+		</c:if>
+		<c:if test="${filaAsiento.existeAsientoA==0}">
+			<img src="images/vacio.jpg" alt="" />
+		</c:if>
+	</td>
+	
+	<td>
+		<c:if test="${filaAsiento.existeAsientoB==1}">
+			<c:if test="${filaAsiento.asientoB.estado==0}">
+				<a href="#" class="bt_green">
+				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoB.numeroAsiento}</strong><span class="bt_green_r"></span>
+				</a>
+			</c:if>
+			<c:if test="${filaAsiento.asientoB.estado==1}">
+				<a href="#" class="bt_red">
+				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoB.numeroAsiento}</strong><span class="bt_red_r"></span>
+				</a>
+			</c:if>		
+		</c:if>
+		<c:if test="${filaAsiento.existeAsientoB==0}">
+			<img src="images/vacio.jpg" alt="" />
+		</c:if>	
+	</td>
+	
+	<td><img src="images/vacio.jpg" alt="" /></td>
+	<td><img src="images/vacio.jpg" alt="" /></td>
+	
+	<td>
+		<c:if test="${filaAsiento.existeAsientoC==1}">
+			<c:if test="${filaAsiento.asientoC.estado==0}">
+				<a href="#" class="bt_green">
+				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoC.numeroAsiento}</strong><span class="bt_green_r"></span>
+				</a>		
+			</c:if>
+			<c:if test="${filaAsiento.asientoC.estado==1}">
+				<a href="#" class="bt_red">
+				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoC.numeroAsiento}</strong><span class="bt_red_r"></span>
+				</a>		
+			</c:if>		
+		</c:if>
+		<c:if test="${filaAsiento.existeAsientoC==0}">
+			<img src="images/vacio.jpg" alt="" />
+		</c:if>	
+	</td>
+	
+	<td>
+		<c:if test="${filaAsiento.existeAsientoD==1}">
+			<c:if test="${filaAsiento.asientoC.estado==0}">
+				<a href="#" class="bt_green">
+				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_green_r"></span>
+				</a>		
+			</c:if>
+			<c:if test="${filaAsiento.asientoC.estado==1}">
+				<a href="#" class="bt_red">
+				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_red_r"></span>
+				</a>
+			</c:if>
+		</c:if>
+		<c:if test="${filaAsiento.existeAsientoD==0}">
+			<img src="images/vacio.jpg" alt="" />
+		</c:if>	
+	</td> 
+</tr>
+
+</c:forEach>
+
+</table>
+     
+     </div>    <!-- end of right content-->
             
                     
-  </div>   <!--end of center content -->               
+	</div>   <!--end of center content -->               
                     
                     
     
