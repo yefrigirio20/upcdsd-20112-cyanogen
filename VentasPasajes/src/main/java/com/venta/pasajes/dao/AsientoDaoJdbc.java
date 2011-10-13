@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.venta.pasajes.model.Asiento;
 import com.venta.pasajes.model.Viaje;
+import com.venta.pasajes.model.listas.FilaAsiento;
 
 
 
@@ -59,4 +60,45 @@ public class AsientoDaoJdbc extends SimpleJdbcDaoSupport implements AsientoDao{
 		return null;
 	}
 
+
+	@Override
+	public List<FilaAsiento> getFilaAsientos(Viaje viaje) {
+		List<Asiento> listaAsientos = getAsientos(viaje);
+		List<FilaAsiento> listaFilaAsientos = new ArrayList<FilaAsiento>();
+		int contador=0;
+		
+		Asiento asientoA=null;
+		Asiento asientoB=null;
+		Asiento asientoC=null;
+		Asiento asientoD=null;
+		FilaAsiento filaAsiento = null;
+		
+		if (listaAsientos != null){
+			for(Asiento asiento: listaAsientos){
+				contador++;
+				if (contador==1){asientoA = asiento;}
+				if (contador==2){asientoB = asiento;}
+				if (contador==3){asientoC = asiento;}
+				if (contador==4){asientoD = asiento;}
+				
+				if(contador==4){
+					contador=0;
+					filaAsiento = new FilaAsiento();
+					filaAsiento.setFilaAsientos(asientoA, asientoB, asientoC, asientoD);
+					listaFilaAsientos.add(filaAsiento);
+					asientoA=null; asientoB=null; asientoC=null; asientoD=null;
+				}
+			}
+			
+			if (asientoA!=null){
+				filaAsiento = new FilaAsiento();
+				filaAsiento.setFilaAsientos(asientoA, asientoB, asientoC, asientoD);
+				listaFilaAsientos.add(filaAsiento);
+			}
+			
+			return listaFilaAsientos;
+		}
+		return null;
+	}
+	
 }

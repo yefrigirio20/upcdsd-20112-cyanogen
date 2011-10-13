@@ -15,7 +15,8 @@ import org.springframework.web.client.RestTemplate;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.venta.pasajes.model.Asiento;
+import com.venta.pasajes.model.listas.FilaAsiento;
+import com.venta.pasajes.util.Constantes;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext-test.xml")
@@ -43,12 +44,12 @@ public class AsientoRestControllerIntegrationTest {
 	
 	@Test
 	public void getAsientosToArray(){
-		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("MMM dd, yyyy hh:mm:ss a").create();
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
 		String jsonAsientos = restTemplate.getForObject(uri, String.class, 1);
 		
-		Type type = new TypeToken<List<Asiento>>(){}.getType();
-		List<Asiento> asientos = gson.fromJson(jsonAsientos, type);
+		Type type = new TypeToken<List<FilaAsiento>>(){}.getType();
+		List<FilaAsiento> listaFilaAsientos = gson.fromJson(jsonAsientos, type);
 		
-		Assert.assertEquals(40, asientos.size());
+		Assert.assertEquals(10, listaFilaAsientos.size());
 	}
 }

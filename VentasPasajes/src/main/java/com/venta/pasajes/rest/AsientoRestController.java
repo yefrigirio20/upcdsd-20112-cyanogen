@@ -14,9 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.venta.pasajes.model.Asiento;
 import com.venta.pasajes.model.Viaje;
+import com.venta.pasajes.model.listas.FilaAsiento;
 import com.venta.pasajes.service.AsientoService;
+import com.venta.pasajes.util.Constantes;
 
 
 @Path("/asiento")
@@ -34,11 +35,11 @@ public class AsientoRestController {
 		Viaje viaje = new Viaje();
 		viaje.setIdViaje(idViaje);
 		
-		List<Asiento> asientos = asientoService.getAsientos(viaje);
+		List<FilaAsiento> filaAsientos = asientoService.getFilaAsientos(viaje);
 		
 		//Gson gson = new Gson();
-		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("MMM dd, yyyy hh:mm:ss a").create();
-		String jsonAsientos= gson.toJson(asientos);
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
+		String jsonAsientos= gson.toJson(filaAsientos);
 		return jsonAsientos;
 	}
 }

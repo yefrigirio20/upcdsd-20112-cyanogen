@@ -18,6 +18,10 @@ public class Asiento {
 		this.numAsiento = numAsiento;
 		this.estado = estado;
 	}
+
+	public String getNumeroAsiento(){
+		return String.format("%02d", this.numAsiento);
+	}	
 	
 	public int getIdAsiento() {
 		return idAsiento;
