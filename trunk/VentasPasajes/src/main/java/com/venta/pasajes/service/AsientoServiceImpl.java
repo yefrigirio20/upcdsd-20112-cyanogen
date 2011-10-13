@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.venta.pasajes.dao.AsientoDao;
 import com.venta.pasajes.model.Asiento;
 import com.venta.pasajes.model.Viaje;
+import com.venta.pasajes.model.listas.FilaAsiento;
 
 @Service
 public class AsientoServiceImpl implements AsientoService{
@@ -18,6 +19,11 @@ public class AsientoServiceImpl implements AsientoService{
 	@Override
 	public List<Asiento> getAsientos(Viaje viaje) {
 		return asientoDao.getAsientos(viaje);
+	}
+
+	@Override
+	public List<FilaAsiento> getFilaAsientos(Viaje viaje) {
+		return asientoDao.getFilaAsientos(viaje);
 	}
 
 }
