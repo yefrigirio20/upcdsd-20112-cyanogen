@@ -24,4 +24,6 @@ public interface ViajeService {
 			Agencia agenciaOrigen, 
 			Agencia agenciaDestino,
 			Date fecha);
+	
+	public Viaje buscarViaje(int idViaje);
 }

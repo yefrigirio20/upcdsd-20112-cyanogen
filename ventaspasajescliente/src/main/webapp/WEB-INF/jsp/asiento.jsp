@@ -54,7 +54,12 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
+    <div class="right_header">
+	    <c:if test="${usuario!=null}">
+	    	Bienvenido ${usuario.nomUsuario} ${usuario.apepatUsuario} ${usuario.apematUsuario}  
+	    	<a href="desconectarse.htm" class="logout">Desconectarse</a>
+	    </c:if>
+    </div>   
     <div class="jclock"></div>
     </div>
     
@@ -63,40 +68,16 @@ $(function($) {
                     <div class="menu">
                     <ul>
                     
-                    <li><a class="current" href="index.html">Pagina de Inicio</a></li>
-                    <li><a href="">Mantenimiento<!--[if IE 7]><!--></a><!--<![endif]-->
-                    <!--[if lte IE 6]><table><tr><td><![endif]-->
-                        <ul>
-                        <li><a href="agencia_lista.html" title="">Mantenimiento de Agencias</a></li>
-                        <li><a href="bus_lista.html" title="">Mantenimiento de buses</a></li>
-                        </ul>
-                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    <li><a class="current" href="itinerario.htm">Inicio</a></li>
+
+                    <li><a href="">Administrador<!--[if IE 7]><!--></a><!--<![endif]-->
                     </li>
 
-                    <li><a href="">Distribucion<!--[if IE 7]><!--></a><!--<![endif]-->
-                    <!--[if lte IE 6]><table><tr><td><![endif]-->
-                        <ul>
-                        <li><a href="ruta_lista.html" title="">Gestion de Ruta</a></li>
-                        <li><a href="tarifa_lista.html" title="">Gestion de Tarifa</a></li>
-                        <li><a href="viaje_lista.html" title="">Gestion de Viaje</a></li>
-                        </ul>
-                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    <li><a href="">Registro de Viaje<!--[if IE 7]><!--></a><!--<![endif]-->
                     </li>
-
-                    <li><a href="">Punto de Venta<!--[if IE 7]><!--></a><!--<![endif]-->
-                    <!--[if lte IE 6]><table><tr><td><![endif]-->
-                        <ul>
-                        <li><a href="pasajero_lista.html" title="">Pasajeros</a></li>
-                        <li><a href="reserva_lista.html" title="">Reservas</a></li>
-                        <li><a href="boleto_lista.html" title="">Boletos</a></li>
-                        </ul>
-                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-                    </li>
-
-
                     
                     </ul>
-                    </div> 
+                    </div>  
                     
                     
                     
@@ -104,9 +85,77 @@ $(function($) {
 	<div class="center_content">
 
 <div class="left_content">
-	<div class="sidebarmenu">
-		<a class="menuitem" href="login.htm">Login</a>
-	</div>
+     <div class="sidebar_box">
+
+         <div class="sidebar_box_top"></div>
+         <div class="sidebar_box_content">
+         <h3>Detalles del Viaje</h3>
+         <img src="images/info.png" alt="" title="" class="sidebar_icon_right" />
+         <ul>
+			<li><strong>ORIGEN:</strong> ${viaje.agenciaOrigen.nombre}</li>
+			<li><strong>DESTINO:</strong> ${viaje.agenciaDestino.nombre}</li>
+			<li><strong>Bus:</strong> ${viaje.bus.placa}</li>
+			<li><strong>Fecha:</strong> ${viaje.formatoFecha}</li>
+			<li><strong>Hora:</strong> ${viaje.formatoHora}</li>
+         </ul>                
+         </div>
+
+         <div class="sidebar_box_bottom"></div>
+     </div>
+
+	<c:if test="${usuario==null}">
+	  <div class="sidebar_box">
+	      <div class="sidebar_box_top"></div>
+	      <div class="sidebar_box_content">
+	
+	      <h4>Comprar Boleto</h4>
+	      <img src="images/notice.png" alt="" title="" class="sidebar_icon_right" />
+	      <p>
+	Para Poder Comprar el boleto Ud. primero debe logearse, en caso de no tener cuenta, registre sus datos para crear una cuenta de usuario
+	      </p>                
+	      </div>
+	      <div class="sidebar_box_bottom"></div>
+	  </div>
+
+		<div class="sidebarmenu">
+			<a class="menuitem" href="login.htm">Login</a>
+			<a class="menuitem" href="abrir_registro_usuario.htm">Registrarse</a>
+		</div>
+	</c:if>
+	
+	<c:if test="${usuario!=null}">
+		
+		<br />
+		<strong>Asientos Seleccionados</strong>
+
+		<table id="rounded-corner2" summary="' Profit">
+		    <thead>
+		    	<tr>
+		        	<th scope="col" class="rounded-company">Item</th>
+		            <th scope="col" class="rounded">Asiento</th>
+		            <th scope="col" class="rounded">Precio</th>
+		            <th scope="col" class="rounded-q4">&nbsp;</th>
+		        </tr>
+		    </thead>
+		        <tfoot>
+		    	<tr>
+		        	<td colspan="3" class="rounded-foot-left"><em>Asientos Seleccionados</em></td>
+		        	<td class="rounded-foot-right">&nbsp;</td>
+		
+		        </tr>
+		    </tfoot>
+		    <tbody>
+		    	<tr>
+		            <td>1</td>
+		            <td>24</td>
+		            <td>30.00</td>
+		            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
+		        </tr>
+		        
+		    </tbody>
+		</table>	
+	</c:if>		
+
 </div>
 
 
@@ -115,7 +164,7 @@ $(function($) {
 
      
 
-<h2>Distribucion de Asientos </h2>
+<h2>Distribucion de Asientos ${cantidadAsientos}</h2>
 
 
 <table>
