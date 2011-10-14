@@ -1,0 +1,83 @@
+package com.venta.pasajes.model;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Viaje {
+	
+	private int idViaje;
+	private Agencia agenciaOrigen;
+	private Agencia agenciaDestino;
+	private Bus bus;
+	private Date fecha;
+	private Date hora;
+	private Double costo;
+	
+	public Viaje(){}
+	
+	public Viaje(int idViaje, Agencia agenciaOrigen, Agencia agenciaDestino,
+		Bus bus, Date fecha, Date hora, Double costo) {
+		this.idViaje = idViaje;
+		this.agenciaOrigen = agenciaOrigen;
+		this.agenciaDestino = agenciaDestino;
+		this.bus = bus;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.costo = costo;
+	}
+
+	SimpleDateFormat sdfFecha = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm:ss");
+	
+	public String getFormatoFecha(){
+		return sdfFecha.format(fecha);
+	}
+	
+	public String getFormatoHora(){
+		return sdfHora.format(hora);
+	}	
+	
+	public int getIdViaje() {
+		return idViaje;
+	}
+	public void setIdViaje(int idViaje) {
+		this.idViaje = idViaje;
+	}
+	public Agencia getAgenciaOrigen() {
+		return agenciaOrigen;
+	}
+	public void setAgenciaOrigen(Agencia agenciaOrigen) {
+		this.agenciaOrigen = agenciaOrigen;
+	}
+	public Agencia getAgenciaDestino() {
+		return agenciaDestino;
+	}
+	public void setAgenciaDestino(Agencia agenciaDestino) {
+		this.agenciaDestino = agenciaDestino;
+	}
+	public Bus getBus() {
+		return bus;
+	}
+	public void setBus(Bus bus) {
+		this.bus = bus;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+	public Date getHora() {
+		return hora;
+	}
+	public void setHora(Date hora) {
+		this.hora = hora;
+	}
+	public Double getCosto() {
+		return costo;
+	}
+	public void setCosto(Double costo) {
+		this.costo = costo;
+	}
+	
+}
