@@ -232,12 +232,12 @@ $(function($) {
 	
 	<td>
 		<c:if test="${filaAsiento.existeAsientoD==1}">
-			<c:if test="${filaAsiento.asientoC.estado==0}">
+			<c:if test="${filaAsiento.asientoD.estado==0}">
 				<a href="#" class="bt_green">
 				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_green_r"></span>
 				</a>		
 			</c:if>
-			<c:if test="${filaAsiento.asientoC.estado==1}">
+			<c:if test="${filaAsiento.asientoD.estado==1}">
 				<a href="#" class="bt_red">
 				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_red_r"></span>
 				</a>
