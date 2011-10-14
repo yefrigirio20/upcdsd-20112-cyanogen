@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.venta.pasajes.model.Asiento;
 import com.venta.pasajes.model.Viaje;
 import com.venta.pasajes.model.listas.FilaAsiento;
 import com.venta.pasajes.service.AsientoService;
@@ -26,11 +27,11 @@ public class AsientoRestController {
 	@Autowired
 	private AsientoService asientoService;
 	
-	@Path("/{idViaje}")
+	@Path("/dist/{idViaje}")
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.APPLICATION_JSON)
 	@GET
-	public String getAsientos(@PathParam("idViaje") int idViaje){
+	public String getFilaAsientos(@PathParam("idViaje") int idViaje){
 		
 		Viaje viaje = new Viaje();
 		viaje.setIdViaje(idViaje);
@@ -42,4 +43,22 @@ public class AsientoRestController {
 		String jsonAsientos= gson.toJson(filaAsientos);
 		return jsonAsientos;
 	}
+	
+	@Path("/lista/{idViaje}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
+	@GET
+	public String getAsientos(@PathParam("idViaje") int idViaje){
+		
+		Viaje viaje = new Viaje();
+		viaje.setIdViaje(idViaje);
+		
+		List<Asiento> asientos = asientoService.getAsientos(viaje);
+		
+		//Gson gson = new Gson();
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
+		String jsonAsientos= gson.toJson(asientos);
+		return jsonAsientos;
+	}
+	
 }
