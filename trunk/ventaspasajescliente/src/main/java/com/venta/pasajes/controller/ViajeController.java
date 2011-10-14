@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +43,8 @@ public class ViajeController {
 	public String buscarViaje(	@RequestParam("txtFecha")String txtFecha,
 								@RequestParam("cboOrigen")int idAgenciaOrigen,
 								@RequestParam("cboDestino") int idAgenciaDestino,
-								Model model) throws ParseException{
+								Model model,
+								HttpServletRequest request) throws ParseException{
 		
 		Agencia agenciaOrigen = agenciaService.buscarAgencia(idAgenciaOrigen);
 		Agencia agenciaDestino = agenciaService.buscarAgencia(idAgenciaDestino);
@@ -51,6 +54,8 @@ public class ViajeController {
 		model.addAttribute("agenciaOrigen", agenciaOrigen);
 		model.addAttribute("agenciaDestino", agenciaDestino);
 		model.addAttribute("tarifas", viajeService.consultarTarifa(agenciaOrigen, agenciaDestino, fecha));
+		
+		
 		
 		return "viajelista";
 	}

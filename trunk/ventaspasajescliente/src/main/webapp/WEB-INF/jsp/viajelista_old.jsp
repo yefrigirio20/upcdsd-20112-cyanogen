@@ -53,12 +53,8 @@ $(function($) {
 
 	<div class="header">
     <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
-    <div class="right_header">
-	    <c:if test="${usuario!=null}">
-	    	Bienvenido ${usuario.nomUsuario} ${usuario.apepatUsuario} ${usuario.apematUsuario}  
-	    	<a href="desconectarse.htm" class="logout">Desconectarse</a>
-	    </c:if>
-    </div>
+    
+    <div class="right_header">Listado de Viajes    <a href="#" class="logout">Desconectarse</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -67,25 +63,66 @@ $(function($) {
                     <div class="menu">
                     <ul>
                     
-                    <li><a class="current" href="itinerario.htm">Inicio</a></li>
-
-                    <li><a href="">Administrador<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <li><a class="current" href="index.html">Pagina de Inicio</a></li>
+                    <li><a href="">Mantenimiento<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <!--[if lte IE 6]><table><tr><td><![endif]-->
+                        <ul>
+                        <li><a href="agencia_lista.html" title="">Mantenimiento de Agencias</a></li>
+                        <li><a href="bus_lista.html" title="">Mantenimiento de buses</a></li>
+                        </ul>
+                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                     </li>
 
-                    <li><a href="">Registro de Viaje<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <li><a href="">Distribucion<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <!--[if lte IE 6]><table><tr><td><![endif]-->
+                        <ul>
+                        <li><a href="ruta_lista.html" title="">Gestion de Ruta</a></li>
+                        <li><a href="tarifa_lista.html" title="">Gestion de Tarifa</a></li>
+                        <li><a href="viaje_lista.html" title="">Gestion de Viaje</a></li>
+                        </ul>
+                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                     </li>
+
+                    <li><a href="">Punto de Venta<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <!--[if lte IE 6]><table><tr><td><![endif]-->
+                        <ul>
+                        <li><a href="pasajero_lista.html" title="">Pasajeros</a></li>
+                        <li><a href="reserva_lista.html" title="">Reservas</a></li>
+                        <li><a href="boleto_lista.html" title="">Boletos</a></li>
+                        </ul>
+                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+
+
                     
                     </ul>
                     </div>  
-
+                    
+                    
+                    
                     
     <div class="center_content">
+    <div class="left_content">
+    
+    		<div class="sidebar_search">
+            <form>
+            <input type="text" name="" class="search_input" value="buscar..." onclick="this.value=''" />
+            <input type="image" class="search_submit" src="images/search.png" />
+            </form>            
+            </div>
+    
+        <div class="sidebarmenu">
+          <a class="menuitem" href="viaje_nuevo.html">Nuevo</a></div>
+            
+            
+        
+    </div>
     
     
     
       <div class="right_content">            
         
-        <h2>Itinerario : ${agenciaOrigen.nombre} - ${agenciaDestino.nombre} </h2> 
+        <h2>Itinerario : ${agenciaOrigen.nombre} - ${agenciaDestino.nombre} ${usuarioSession.nomUsuario}</h2> 
 <div class="form"> 
 <form action="asiento.htm" method="post" class="niceform">
 	<table id="rounded-corner" summary="2007 Major IT Companies' Profit">

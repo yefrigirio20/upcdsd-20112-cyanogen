@@ -58,6 +58,21 @@ $(function($) {
     </div>
     
     <div class="main_content">
+
+                    <div class="menu">
+                    <ul>
+                    
+                    <li><a class="current" href="itinerario.htm">Inicio</a></li>
+
+                    <li><a href="">Administrador<!--[if IE 7]><!--></a><!--<![endif]-->
+                    </li>
+
+                    <li><a href="">Registro de Viaje<!--[if IE 7]><!--></a><!--<![endif]-->
+                    </li>
+                    
+                    </ul>
+                    </div>  
+
                     
 	<div class="center_content">
 

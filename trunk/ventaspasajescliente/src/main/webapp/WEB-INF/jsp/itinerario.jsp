@@ -121,7 +121,8 @@ ddaccordion.init({
     
     <div class="footer_login">
     
-    	<div class="left_footer_login">Grupo CYANOGEN | Desarrollado por <a href="http://code.google.com/p/upcdsd-20112-cyanogen/">Jonathan Roa</a></div>
+    	
+    	<div class="left_footer">Sistema de Buses | Desarrollado por <a href="http://indeziner.com">Jonathan Roa</a></div>
     	<div class="right_footer_login"><a href="http://indeziner.com"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
     
     </div>

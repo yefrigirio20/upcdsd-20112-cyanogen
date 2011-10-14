@@ -60,7 +60,7 @@ ddaccordion.init({
          
          
                    
-         <form action="asiento.htm" method="post" class="niceform">
+         <form action="validar_login.htm" method="post" class="niceform">
          
                 <fieldset>                      
                     <dl>
