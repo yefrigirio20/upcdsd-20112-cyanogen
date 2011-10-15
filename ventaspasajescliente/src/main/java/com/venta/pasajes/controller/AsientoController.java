@@ -18,9 +18,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.venta.pasajes.model.Asiento;
-import com.venta.pasajes.model.ItemAsiento;
 import com.venta.pasajes.model.Viaje;
 import com.venta.pasajes.model.listas.FilaAsiento;
+import com.venta.pasajes.model.listas.ItemAsiento;
 import com.venta.pasajes.service.ViajeService;
 import com.venta.pasajes.util.Constantes;
 
@@ -72,9 +72,5 @@ public class AsientoController {
 		return "asiento";
 	}
 	
-	@RequestMapping("/agregar_carrito.htm")
-	public String agregarAsiento(HttpServletRequest request){
-		
-		return "carrito";
-	}
+
 }
