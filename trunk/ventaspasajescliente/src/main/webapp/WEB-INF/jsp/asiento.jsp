@@ -47,6 +47,41 @@ $(function($) {
 <script language="javascript" type="text/javascript" src="niceforms.js"></script>
 <link rel="stylesheet" type="text/css" media="all" href="niceforms-default.css" />
 
+
+<script>
+function agregar(valor){
+ $('#hd_numAsiento').val(valor);
+
+ $.ajax({
+    type: "POST",
+    url: "carrito_agregar.htm",
+    data:{numAsiento : $("#hd_numAsiento").val()},
+    success: function(data){
+      $("#resultado").html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      $("#resultado").html(jqXHR.responseText);
+     }
+  }); 
+};
+
+function eliminar(valor){
+	 $('#hd_numAsiento').val(valor);
+
+	 $.ajax({
+	    type: "POST",
+	    url: "carrito_eliminar.htm",
+	    data:{numAsiento : $("#hd_numAsiento").val()},
+	    success: function(data){
+	      $("#resultado").html(data);
+	    },
+	    error: function(jqXHR, textStatus, errorThrown) {
+	      $("#resultado").html(jqXHR.responseText);
+	     }
+	  }); 
+	};
+</script>
+
 </head>
 <body>
 <div id="main_container">
@@ -122,39 +157,12 @@ $(function($) {
 			<a class="menuitem" href="abrir_registro_usuario.htm">Registrarse</a>
 		</div>
 	</c:if>
-	
-	<c:if test="${usuario!=null}">
-		
-		<br />
-		<strong>Asientos Seleccionados</strong>
 
-		<table id="rounded-corner2" summary="' Profit">
-		    <thead>
-		    	<tr>
-		        	<th scope="col" class="rounded-company">Item</th>
-		            <th scope="col" class="rounded">Asiento</th>
-		            <th scope="col" class="rounded">Precio</th>
-		            <th scope="col" class="rounded-q4">&nbsp;</th>
-		        </tr>
-		    </thead>
-		        <tfoot>
-		    	<tr>
-		        	<td colspan="3" class="rounded-foot-left"><em>Asientos Seleccionados</em></td>
-		        	<td class="rounded-foot-right">&nbsp;</td>
-		
-		        </tr>
-		    </tfoot>
-		    <tbody>
-		    	<tr>
-		            <td>1</td>
-		            <td>24</td>
-		            <td>30.00</td>
-		            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
-		        </tr>
-		        
-		    </tbody>
-		</table>	
-	</c:if>		
+	<input id="hd_numAsiento" type="hidden" name="hd_numAsiento" />
+
+<div id="resultado"></div>
+	
+	
 
 </div>
 
@@ -167,21 +175,23 @@ $(function($) {
 <h2>Distribucion de Asientos ${cantidadAsientos}</h2>
 
 
+
 <table>
 
 <c:forEach items="${listaFilaAsientos}" var="filaAsiento">
-	
+
+
 <tr>
 	<td>
 		<c:if test="${filaAsiento.existeAsientoA==1}">
 			<c:if test="${filaAsiento.asientoA.estado==0}">
-				<a href="#" class="bt_green">
+				<a class="bt_green" <c:if test="${usuario!=null}"> onClick="agregar('${filaAsiento.asientoA.numeroAsiento}');"</c:if> >
 				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoA.numeroAsiento}</strong><span class="bt_green_r"></span>
 				</a>				
 			</c:if>
 
 			<c:if test="${filaAsiento.asientoA.estado==1}">
-				<a href="#" class="bt_red">
+				<a  class="bt_red" >
 				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoA.numeroAsiento}</strong><span class="bt_red_r"></span>
 				</a>							
 			</c:if>			
@@ -194,12 +204,12 @@ $(function($) {
 	<td>
 		<c:if test="${filaAsiento.existeAsientoB==1}">
 			<c:if test="${filaAsiento.asientoB.estado==0}">
-				<a href="#" class="bt_green">
+				<a class="bt_green" <c:if test="${usuario!=null}"> onClick="agregar('${filaAsiento.asientoB.numeroAsiento}');" </c:if>>
 				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoB.numeroAsiento}</strong><span class="bt_green_r"></span>
 				</a>
 			</c:if>
 			<c:if test="${filaAsiento.asientoB.estado==1}">
-				<a href="#" class="bt_red">
+				<a  class="bt_red">
 				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoB.numeroAsiento}</strong><span class="bt_red_r"></span>
 				</a>
 			</c:if>		
@@ -215,12 +225,12 @@ $(function($) {
 	<td>
 		<c:if test="${filaAsiento.existeAsientoC==1}">
 			<c:if test="${filaAsiento.asientoC.estado==0}">
-				<a href="#" class="bt_green">
+				<a class="bt_green" <c:if test="${usuario!=null}"> onClick="agregar('${filaAsiento.asientoC.numeroAsiento}');" </c:if>>
 				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoC.numeroAsiento}</strong><span class="bt_green_r"></span>
 				</a>		
 			</c:if>
 			<c:if test="${filaAsiento.asientoC.estado==1}">
-				<a href="#" class="bt_red">
+				<a class="bt_red">
 				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoC.numeroAsiento}</strong><span class="bt_red_r"></span>
 				</a>		
 			</c:if>		
@@ -233,12 +243,12 @@ $(function($) {
 	<td>
 		<c:if test="${filaAsiento.existeAsientoD==1}">
 			<c:if test="${filaAsiento.asientoD.estado==0}">
-				<a href="#" class="bt_green">
+				<a class="bt_green" <c:if test="${usuario!=null}">onClick="agregar('${filaAsiento.asientoD.numeroAsiento}');"  </c:if>>
 				<span class="bt_green_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_green_r"></span>
 				</a>		
 			</c:if>
 			<c:if test="${filaAsiento.asientoD.estado==1}">
-				<a href="#" class="bt_red">
+				<a class="bt_red">
 				<span class="bt_red_lft"></span><strong>${filaAsiento.asientoD.numeroAsiento}</strong><span class="bt_red_r"></span>
 				</a>
 			</c:if>
@@ -252,7 +262,7 @@ $(function($) {
 </c:forEach>
 
 </table>
-     
+ 
      </div>    <!-- end of right content-->
             
                     
