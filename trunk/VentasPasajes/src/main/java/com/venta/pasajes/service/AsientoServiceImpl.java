@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.venta.pasajes.dao.AsientoDao;
 import com.venta.pasajes.model.Asiento;
+import com.venta.pasajes.model.Usuario;
 import com.venta.pasajes.model.Viaje;
 import com.venta.pasajes.model.listas.FilaAsiento;
 
@@ -26,4 +27,13 @@ public class AsientoServiceImpl implements AsientoService{
 		return asientoDao.getFilaAsientos(viaje);
 	}
 
+	@Override
+	public Asiento buscarAsiento(int idAsiento) {
+		return asientoDao.buscarAsiento(idAsiento);
+	}
+
+	@Override
+	public boolean asignarUsuario(Asiento asiento, Usuario usuario) {
+		return asientoDao.asignarUsuario(asiento, usuario);
+	}
 }

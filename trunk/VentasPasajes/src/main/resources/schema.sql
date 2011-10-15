@@ -49,8 +49,7 @@ create table asiento(
 
 drop table boleto if exists;
 create table boleto(
-	idBoleto integer primary key identity,
-	codUsuario varchar(30),
+	idBoleto integer primary key,
 	fecha date,
 	monto double,
 	idAsiento integer

@@ -38,7 +38,6 @@ public class AsientoRestController {
 		
 		List<FilaAsiento> filaAsientos = asientoService.getFilaAsientos(viaje);
 		
-		//Gson gson = new Gson();
 		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
 		String jsonAsientos= gson.toJson(filaAsientos);
 		return jsonAsientos;
@@ -55,10 +54,22 @@ public class AsientoRestController {
 		
 		List<Asiento> asientos = asientoService.getAsientos(viaje);
 		
-		//Gson gson = new Gson();
 		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
 		String jsonAsientos= gson.toJson(asientos);
 		return jsonAsientos;
 	}
 	
+	@Path("/{idAsiento}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
+	@GET
+	public String buscarAsiento(@PathParam("idAsiento") int idAsiento){
+		Asiento asiento = asientoService.buscarAsiento(idAsiento);
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
+		String jsonAsiento = gson.toJson(asiento);
+		return jsonAsiento;
+	} 
+
+
 }
+

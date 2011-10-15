@@ -7,7 +7,6 @@ import java.util.Date;
 public class Boleto {
 
 	private int idBoleto;
-	private Usuario usuario;
 	private Date fecha;
 	private double monto;
 	private Asiento asiento;
@@ -17,12 +16,6 @@ public class Boleto {
 	}
 	public void setIdBoleto(int idBoleto) {
 		this.idBoleto = idBoleto;
-	}
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 	public Date getFecha() {
 		return fecha;
