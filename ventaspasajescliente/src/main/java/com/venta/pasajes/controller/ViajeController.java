@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,8 +55,6 @@ public class ViajeController {
 		model.addAttribute("agenciaOrigen", agenciaOrigen);
 		model.addAttribute("agenciaDestino", agenciaDestino);
 		model.addAttribute("tarifas", viajeService.consultarTarifa(agenciaOrigen, agenciaDestino, fecha));
-		
-		
 		
 		return "viajelista";
 	}

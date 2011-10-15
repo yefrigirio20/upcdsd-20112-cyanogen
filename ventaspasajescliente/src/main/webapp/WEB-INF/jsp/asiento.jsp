@@ -158,6 +158,12 @@ function eliminar(valor){
 		</div>
 	</c:if>
 
+	<c:if test="${usuario!=null}">
+		<div class="sidebarmenu">
+			<a class="menuitem" href="registrar_boletos.htm">Comprar</a>
+		</div>
+	</c:if>
+
 	<input id="hd_numAsiento" type="hidden" name="hd_numAsiento" />
 
 <div id="resultado"></div>
