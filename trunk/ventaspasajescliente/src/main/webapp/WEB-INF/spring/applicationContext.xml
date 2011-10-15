@@ -20,5 +20,10 @@
 		serviceClass="com.venta.pasajes.service.ViajeService"
 		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/viajeService" />
 
+	<jaxws:client id="boletoService" 
+		serviceClass="com.venta.pasajes.service.BoletoService"
+		address="http://localhost:8080/apachecxf-jaxws-ventapasajes/services/boletoService" />
+
+
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />		
 </beans>
