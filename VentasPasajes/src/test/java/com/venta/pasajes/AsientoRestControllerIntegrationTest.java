@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.venta.pasajes.model.Asiento;
+import com.venta.pasajes.model.Usuario;
 import com.venta.pasajes.model.listas.FilaAsiento;
 import com.venta.pasajes.util.Constantes;
 
@@ -25,8 +26,10 @@ public class AsientoRestControllerIntegrationTest {
 	private Logger logger = Logger
 			.getLogger(AsientoRestControllerIntegrationTest.class);
 	
-	String uriDist = "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/dist/{idViaje}";
-	String uriLista = "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/lista/{idViaje}";
+	String uriDist 		= "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/dist/{idViaje}";
+	String uriLista 	= "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/lista/{idViaje}";
+	String uriAsiento 	= "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/{idAsiento}";
+	String uriBase		= "http://localhost:8080/apachecxf-jaxws-ventapasajes/services/restAsientoService/asiento/actualizar";
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -67,4 +70,32 @@ public class AsientoRestControllerIntegrationTest {
 		
 		Assert.assertEquals(40, listaAsientos.size());
 	}	
+
+	
+	@Test
+	public void buscarAsientoTest(){
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
+		String jsonAsiento = restTemplate.getForObject(uriAsiento, String.class,1);
+		Asiento asiento = gson.fromJson(jsonAsiento, Asiento.class);
+		
+		Assert.assertEquals(2,asiento.getNumAsiento());
+	}
+	
+	@Test
+	public void asignarUsuarioTest(){
+		Asiento asiento = new Asiento();
+		asiento.setIdAsiento(1);
+		Usuario usuario = new Usuario();
+		usuario.setCodUsuario("JROA");
+		restTemplate.put(uriBase, asiento, usuario);
+
+		Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat(Constantes.FORMATO_FECHA).create();
+		String jsonAsiento = restTemplate.getForObject(uriAsiento, String.class,1);
+		Asiento asiento2 = gson.fromJson(jsonAsiento, Asiento.class);
+		
+		Assert.assertEquals("Jonathan", asiento2.getUsuario().getNomUsuario());
+	}	
+	
+	
+
 }

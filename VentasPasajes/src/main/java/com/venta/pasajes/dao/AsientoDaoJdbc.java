@@ -11,8 +11,10 @@ import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.venta.pasajes.model.Asiento;
+import com.venta.pasajes.model.Usuario;
 import com.venta.pasajes.model.Viaje;
 import com.venta.pasajes.model.listas.FilaAsiento;
+import com.venta.pasajes.util.Constantes;
 
 
 
@@ -99,6 +101,39 @@ public class AsientoDaoJdbc extends SimpleJdbcDaoSupport implements AsientoDao{
 			return listaFilaAsientos;
 		}
 		return null;
+	}
+
+	@Override
+	public Asiento buscarAsiento(int idAsiento) {
+		
+		Asiento asiento = null;
+		String sql ="select idAsiento, idViaje, codUsuario, numAsiento, estado from asiento where idAsiento=?";
+		try{
+			Map<String,Object> row = getJdbcTemplate().queryForMap(sql,idAsiento);
+			asiento = new Asiento();
+			asiento.setIdAsiento(idAsiento);
+			asiento.setViaje(viajeDao.buscarViaje((Integer)row.get("idViaje")));
+			asiento.setUsuario(usuarioDao.buscarUsuario((String)row.get("codUsuario")));
+			asiento.setNumAsiento((Integer)row.get("numAsiento"));
+			asiento.setEstado((Integer)row.get("estado"));
+			return asiento;
+		}catch(Exception ex){
+			return null;
+		}
+	}
+
+	@Override
+	public boolean asignarUsuario(Asiento asiento, Usuario usuario) {
+		String sql="update asiento set codUsuario = ?, estado=? where idAsiento=?";
+		try{
+			getJdbcTemplate().update(sql, 
+					usuario.getCodUsuario(), 
+					Constantes.ASIENTO_VENDIDO,
+					asiento.getIdAsiento());
+			return true;
+		}catch(Exception ex){
+			return false;
+		}
 	}
 	
 }

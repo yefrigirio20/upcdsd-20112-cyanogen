@@ -43,7 +43,7 @@ values
 (0,1,2,'2011-11-11','2011-11-11 14:00:00',70.00);
 
 insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, null, 1,0);
-insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, null, 2,0);
+insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, 'JROA', 2,1);
 insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, null, 3,0);
 insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, null, 4,0);
 insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (0, null, 5,0);
@@ -167,4 +167,5 @@ insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (2, null, 3
 insert into asiento(idViaje, codUsuario,  numAsiento, estado) values (2, null, 40,0);
 
 
-
+insert into Boleto(idBoleto,fecha,monto,idAsiento)
+values(1,'2011-11-11',50.00,1);

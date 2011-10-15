@@ -50,6 +50,12 @@
 
 	<jaxws:endpoint id="viajeServiceEndpoint" implementor="#viajeService"
 		address="/viajeService" />
+		
+	<bean id="boletoService" class="com.venta.pasajes.service.BoletoServiceImpl" />		
+
+	<jaxws:endpoint id="boletoServiceEndpoint" implementor="#boletoService"
+		address="/boletoService" />
+
 	
 	<jdbc:embedded-database id="dataSource">
 		<jdbc:script location="classpath:schema.sql" />
